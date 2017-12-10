@@ -3,15 +3,13 @@
 namespace sff
 {
 
+namespace utils
+{
+
 Game::Game()
 {
 	if (!m_font.loadFromFile("resources/fonts/VT323.ttf"))
 	{}// Handle error
-	
-	
-	m_menu.push_back(sf::Text("PLAY", m_font, 24));
-	m_menu.push_back(sf::Text("OPTIONS", m_font, 24));
-	m_menu.push_back(sf::Text("EXIT", m_font, 24));
 }
 
 void Game::run()
@@ -25,7 +23,6 @@ void Game::run()
 			switch (event.type)
 			{
 				case sf::Event::KeyPressed:
-					text.setString(text.getString() + "\nkey pressed");
 					break;
 				case sf::Event::Closed:
 					window.close();
@@ -36,9 +33,10 @@ void Game::run()
 		}
 
 		window.clear();
-		window.draw(text);
 		window.display();
 	}
+}
+
 }
 
 }

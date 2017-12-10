@@ -4,26 +4,32 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include "Singleton.hpp"
 
 namespace sff
 {
 
+namespace utils
+{
+
 /**
  */
-class Game
+class Game : public Singleton<Game>
 {
-public: 
-	/**
-	 */
-	Game();
+friend class Singleton<Game>;
+public:
 	/**
 	 */
 	void run();
 private:
+	/**
+	 */
+	Game();
 	sf::Font m_font;
-	std::vector<sf::Text> m_menu;
-	unsigned int m_menu_idx;
 };
+
+}
+
 }
 
 #endif

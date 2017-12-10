@@ -1,26 +1,38 @@
 #ifndef SINGLETON_HPP
 #define SINGLETON_HPP
 
-#include <memory>
-
 namespace sff
 {
-
+namespace utils
+{
+/**
+ */
 template <typename T>
 class Singleton
 {
 public:
-	std::weak_ptr<T> get_instance();
-private:
-	std::unique_ptr<T> m_instance;
+	/**
+	 */
+	Singleton(const Singleton&) = delete;
+	/**
+	 */
+	Singleton& operator=(const Singleton&) = delete;
+	/**
+	 */
+	static T& get_instance()
+	{
+		static T instance;
+		return instance;
+	}
+protected:
+	/**
+	 */
+	Singleton() {};
+	/**
+	 */
+	~Singleton() {};
 };
-
-template <typename T>
-std::weak_ptr<T> Singleton<T>::get_instance()
-{
-	return std::weak_ptr<T>(m_instance);
 }
-
 }
 
 #endif

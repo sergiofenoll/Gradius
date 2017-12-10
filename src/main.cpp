@@ -2,7 +2,6 @@
 
 int main()
 {
-	sff::Game game;
-	game.run();
+	sff::utils::Game::get_instance().run();
 	return 0;
 }
