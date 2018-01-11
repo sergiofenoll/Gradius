@@ -1,0 +1,7 @@
+{
+  "levels": [
+    "resources/levels/level1.json"
+  ],
+  "player_lives": 3,
+  "player_texture": "resources/sprites/Ship/f1.png"
+}

@@ -1,0 +1,17 @@
+{
+  "level_background": "resources/sprites/backgrounds/level1.png",
+  "waves": [
+    {
+      "enemies" : [
+        {
+          "amount": 5,
+          "enemy_config_file": "resources/enemy/enemy1.json"
+        },
+        {
+          "amount": 3,
+          "enemy_config_file": "resources/enemy/enemy2.json"
+        }
+      ]
+    }
+  ]
+}

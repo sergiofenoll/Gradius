@@ -27,10 +27,10 @@ public:
 protected:
 	/**
 	 */
-	Singleton() {};
+	Singleton() = default;
 	/**
 	 */
-	~Singleton() {};
+	~Singleton() = default;
 };
 }
 }

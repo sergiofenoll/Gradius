@@ -10,24 +10,33 @@ FIND_PACKAGE(SFML 2 COMPONENTS system window graphics)
 # FILE(GLOB SRC src/*.cpp src/*.hpp)
 
 SET(SRC
-	src/main.cpp
-	
-	src/controllers/CollisionController.hpp
-	src/controllers/Controller.hpp
-	src/controllers/EventController.hpp
-	src/controllers/MoveController.hpp
+		src/main.cpp
 
-	src/entities/Entity.hpp
+		src/controllers/Controller.hpp
 
-	src/helpers/Game.cpp
-	src/helpers/Game.hpp
-	src/helpers/Singleton.hpp
-	src/helpers/Stopwatch.cpp
-	src/helpers/Stopwatch.hpp
-	src/helpers/Transformation.cpp
-	src/helpers/Transformation.hpp
+		src/entities/Entity.cpp
+		src/entities/Entity.hpp
+        src/entities/PlayerShipEntity.cpp
+        src/entities/PlayerShipEntity.hpp
+		src/entities/EnemyShipEntity.cpp
+		src/entities/EnemyShipEntity.hpp
+		src/entities/BulletEntity.cpp
+		src/entities/BulletEntity.hpp
+		src/entities/ObstacleEntity.cpp
+		src/entities/ObstacleEntity.hpp
 
-	src/views/View.hpp)
+		src/models/Model.hpp
+
+		src/utils/Game.cpp
+        src/utils/Game.hpp
+		src/utils/json.hpp
+        src/utils/Singleton.hpp
+		src/utils/Stopwatch.hpp
+        src/utils/Transformation.hpp
+
+        src/views/View.hpp
+        src/views/View.cpp
+        src/utils/Level.hpp src/utils/Level.cpp src/entities/EnemyShipEntity.cpp src/entities/BulletEntity.cpp src/entities/ObstacleEntity.cpp)
 
 INCLUDE_DIRECTORIES(${SFML_INCLUDE_DIR})
 
