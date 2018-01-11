@@ -44,7 +44,7 @@ public:
 	 */
 	PixelPosition transform(const sf::RenderWindow& window, CoordPosition coords) const
 	{
-		sf::Vector2u window_size = window.getSize();
+		auto window_size = window.getSize();
 		auto x_pix = static_cast<unsigned int>((coords.x / m_max_x_coor) * window_size.x);
 		auto y_pix = static_cast<unsigned int>((coords.y / m_max_y_coor) * window_size.y);
 		return PixelPosition(x_pix, y_pix);

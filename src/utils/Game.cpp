@@ -17,20 +17,21 @@ Game::Game(std::string config_filename)
 
 void Game::run()
 {
-	logic::Controller::shared controller = std::make_shared<logic::Controller>();
-	data::Entity::shared player = std::make_shared<data::PlayerShipEntity>(controller);
+	auto controller = std::make_shared<logic::Controller>();
+	auto player = std::make_shared<data::PlayerShipEntity>(controller);
 	std::vector<data::Entity::shared> entities;
 
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Gradius");
 	while (window.isOpen())
 	{
-		// Get time from stopwatch
+		Stopwatch::get_instance().start();
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
 			switch (event.type)
 			{
 				case sf::Event::KeyPressed:
+					// TODO: Move this to the controller (maybe add a class to encapsulate the SFML keyboard)
 					switch (event.key.code)
 					{
 						case sf::Keyboard::Escape:
@@ -64,19 +65,20 @@ void Game::run()
 		}
 		if (!entities.size())
 		{
+			std::cout << "New wave incoming, cowabunga!\n";
 			entities = m_levels[m_level_nr].get_next_wave();
 			for (auto& entity : entities) entity->set_controller(controller);
 		}
 		window.clear();
+		m_levels[m_level_nr].draw_background(window);
 		for (auto& entity : entities)
 		{
 			entity->control(data::Entity::Key::NONE);
 			entity->notify(window);
 			player->notify(window);
 		}
+		Stopwatch::get_instance().end();
 		window.display();
-		// Get time from stopwatch
-		// Sleep the remaining time (take a nap)
 	}
 }
 

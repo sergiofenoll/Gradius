@@ -1,5 +1,5 @@
 {
-  "delta_x": 0.01,
+  "delta_x": -0.00001,
   "delta_y": 0.00,
   "fires": false,
   "max_health": 1

@@ -10,6 +10,7 @@
 #include "json.hpp"
 #include "Level.hpp"
 #include "Singleton.hpp"
+#include "Stopwatch.hpp"
 #include "../entities/Entity.hpp"
 #include "../entities/PlayerShipEntity.hpp"
 #include "../entities/BulletEntity.hpp"

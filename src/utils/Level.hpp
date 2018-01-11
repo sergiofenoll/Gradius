@@ -31,9 +31,19 @@ public:
 	 * @param config_filename
 	 */
 	explicit Level(std::string config_filename);
+	/**
+	 * @brief
+	 * @return
+	 */
 	std::vector<data::Entity::shared> get_next_wave();
+	/**
+	 * @brief
+	 * @param window
+	 */
+	void draw_background(sf::RenderWindow& window);
 private:
-	sf::Texture m_background;
+	sf::Texture m_background_texture;
+	sf::Sprite m_background_sprite;
 	std::vector<Wave> m_waves;
 	unsigned int m_wave_nr {0};
 };

@@ -17,7 +17,7 @@ View::View(std::string texture_filename)
 
 void View::display(data::Model& model, sf::RenderWindow& window)
 {
-	utils::PixelPosition pos = utils::Transformation::get_instance().transform(
+	auto pos = utils::Transformation::get_instance().transform(
 			window, utils::CoordPosition(model.get_x_pos(), model.get_y_pos()));
 	m_sprite.setPosition(pos.x, pos.y);
 	window.draw(m_sprite);

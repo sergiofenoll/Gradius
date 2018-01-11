@@ -12,10 +12,12 @@ Level::Level(std::string config_filename)
 	file >> config;
 	try
 	{
-		if (!m_background.loadFromFile(config["level_background"]))
+		if (!m_background_texture.loadFromFile(config["level_background"]))
 		{
-			// Exception
+			// TODO: Exception
+			std::cout << "Failed to load " << config["level_background"] << std::endl;
 		}
+		m_background_sprite.setTexture(m_background_texture);
 	} catch (...)
 	{}
 	for (auto wave : config["waves"])
@@ -40,6 +42,12 @@ std::vector<data::Entity::shared> Level::get_next_wave()
 	}
 	++m_wave_nr;
 	return current_wave;
+}
+
+void Level::draw_background(sf::RenderWindow &window)
+{
+	m_background_sprite.move(0.01, 0);
+	window.draw(m_background_sprite);
 }
 
 }
