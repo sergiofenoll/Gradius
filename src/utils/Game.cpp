@@ -18,11 +18,13 @@ Game::Game(std::string config_filename)
 void Game::run()
 {
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Gradius");
+	utils::Transformation::get_instance().set_resolution(800, 600);
 
 	auto controller = std::make_shared<logic::Controller>();
 	std::string player_config = m_config["player_config"];
 	auto player = std::make_shared<data::PlayerShipEntity>(player_config);
 	std::vector<data::Entity::shared> entities;
+	player->dirs();
 
 	while (window.isOpen())
 	{
@@ -36,12 +38,22 @@ void Game::run()
 		{
 			std::cout << "New wave incoming, cowabunga!\n";
 			entities = m_levels[m_level_nr].get_next_wave();
-			// if (entities == NULL) entities = m_levels[++m_level_nr].get_next_wave();
+			if (entities.empty())
+			{
+				if (++m_level_nr < m_levels.size())
+					entities = m_levels[++m_level_nr].get_next_wave();
+				else
+				{
+					std::cout << "All levels over, you won!\n";
+					break;
+				}
+			}
 		}
 
 		window.clear();
 
 		m_levels[m_level_nr].draw_background(window);
+		player->move();
 		std::vector<data::Entity::shared> survivors;
 		for (auto& entity : entities) entity->move();
 		controller->collision_detection(entities);

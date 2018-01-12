@@ -19,9 +19,7 @@ SET(SRC
         src/entities/PlayerShipEntity.hpp
 		src/entities/EnemyShipEntity.cpp
 		src/entities/EnemyShipEntity.hpp
-		src/entities/BulletEntity.cpp
 		src/entities/BulletEntity.hpp
-		src/entities/ObstacleEntity.cpp
 		src/entities/ObstacleEntity.hpp
 
 		src/models/Model.hpp
@@ -35,7 +33,7 @@ SET(SRC
 
         src/views/View.hpp
         src/views/View.cpp
-        src/utils/Level.hpp src/utils/Level.cpp src/entities/EnemyShipEntity.cpp src/entities/BulletEntity.cpp src/entities/ObstacleEntity.cpp)
+        src/utils/Level.hpp src/utils/Level.cpp src/entities/EnemyShipEntity.cpp src/entities/BorderEntity.cpp src/entities/BorderEntity.hpp)
 
 INCLUDE_DIRECTORIES(${SFML_INCLUDE_DIR})
 

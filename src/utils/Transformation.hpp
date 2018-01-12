@@ -41,30 +41,40 @@ class Transformation : public Singleton<Transformation>
 public:
 	friend class Singleton<Transformation>;
 	/**
+	 *
+	 * @param width
+	 * @param height
 	 */
-	PixelPosition transform(const sf::RenderWindow& window, CoordPosition coords) const
+	void set_resolution(unsigned int width, unsigned int height)
 	{
-		auto window_size = window.getSize();
-		auto x_pix = static_cast<unsigned int>((coords.x / m_max_x_coor) * window_size.x);
-		auto y_pix = static_cast<unsigned int>((coords.y / m_max_y_coor) * window_size.y);
+		m_window_width = width;
+		m_window_height = height;
+	}
+	/**
+	 */
+	PixelPosition transform(CoordPosition coords) const
+	{
+		auto x_pix = static_cast<unsigned int>((coords.x / m_max_x_coor) * m_window_width);
+		auto y_pix = static_cast<unsigned int>((coords.y / m_max_y_coor) * m_window_height);
 		return PixelPosition(x_pix, y_pix);
 	};
 	/**
 	 *
 	 */
-	CoordPosition transform(const sf::RenderWindow& window, PixelPosition pixels) const
+	CoordPosition transform(PixelPosition pixels) const
 	{
-		auto window_size = window.getSize();
-		auto x_coord = ((double) pixels.x / (double) window_size.x) * m_max_x_coor;
-		auto y_coord = ((double) pixels.y / (double) window_size.y) * m_max_y_coor;
+		auto x_coord = ((double) pixels.x / (double) m_window_width) * m_max_x_coor;
+		auto y_coord = ((double) pixels.y / (double) m_window_height) * m_max_y_coor;
 		return CoordPosition(x_coord, y_coord);
 	};
 private:
 	/**
 	 */
 	Transformation() = default;
-	double m_max_x_coor = 4.0;
-	double m_max_y_coor = 3.0;
+	float m_max_x_coor = 4.0;
+	float m_max_y_coor = 3.0;
+	unsigned int m_window_width {800};
+	unsigned int m_window_height {600};
 };
 
 }

@@ -17,7 +17,7 @@ public:
 	using weak = std::weak_ptr<Model>;
 	/**
 	 */
-	explicit Model(float x = 0.0, float y = 1.5) : m_x_pos(x), m_y_pos(y) {};
+	explicit Model(float x = 0.0, float y = 1.5, float radius = 0.05) : m_x_pos(x), m_y_pos(y), m_radius(radius) {};
 	/**
 	 */
 	float get_x_pos() const { return m_x_pos; };
@@ -57,7 +57,7 @@ public:
 private:
 	float m_x_pos;
 	float m_y_pos;
-	float m_radius {0.05};
+	float m_radius;
 };
 
 }

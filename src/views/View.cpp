@@ -25,7 +25,7 @@ View::View(sf::Texture texture)
 void View::display(data::Model& model, sf::RenderWindow& window, bool debug)
 {
 	auto pos = utils::Transformation::get_instance().transform(
-			window, utils::CoordPosition(model.get_x_pos(), model.get_y_pos()));
+			utils::CoordPosition(model.get_x_pos(), model.get_y_pos()));
 	m_sprite.setPosition(pos.x, pos.y);
 	window.draw(m_sprite);
 	if (debug)
@@ -40,6 +40,12 @@ void View::display(data::Model& model, sf::RenderWindow& window, bool debug)
 		debug_hitbox.setOutlineColor(sf::Color(255, 255, 255));
 		window.draw(debug_hitbox);
 	}
+}
+
+float View::get_max_texture_size() const
+{
+	auto texture_size = m_texture.getSize();
+	return std::min(texture_size.x, texture_size.y);
 }
 
 }

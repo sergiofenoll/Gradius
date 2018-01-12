@@ -38,6 +38,10 @@ public:
 	 * @param window
 	 */
 	void display(data::Model& model, sf::RenderWindow& window, bool debug);
+	/**
+	 *
+	 */
+	 float get_max_texture_size() const;
 private:
 	sf::Sprite m_sprite;
 	sf::Texture m_texture;

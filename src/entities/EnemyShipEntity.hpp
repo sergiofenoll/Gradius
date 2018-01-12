@@ -8,6 +8,7 @@
 #include "Entity.hpp"
 #include "../controllers/Controller.hpp"
 #include "../utils/Stopwatch.hpp"
+#include "../utils/Transformation.hpp"
 #include "../utils/json.hpp"
 
 namespace sff

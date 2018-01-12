@@ -34,7 +34,7 @@ Level::Level(std::string config_filename)
 
 std::vector<data::Entity::shared> Level::get_next_wave()
 {
-	// if (m_wave_nr > m_waves.size()) return NULL;
+	if (m_wave_nr >= m_waves.size()) return std::vector<data::Entity::shared> {};
 	std::vector<data::Entity::shared> current_wave;
 	for (EnemyConfig enemy_config : m_waves[m_wave_nr].enemies)
 	{

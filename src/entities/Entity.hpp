@@ -11,13 +11,6 @@ namespace sff
 
 namespace data
 {
-struct Directions
-{
-	bool up {false};
-	bool down {false};
-	bool left {false};
-	bool right {false};
-};
 /**
  * @brief
  */
@@ -47,7 +40,7 @@ public:
 	/**
 	 * @brief
 	 */
-	virtual void move(Directions directions = {}) { m_model->change_pos(-m_delta_x, m_delta_y); };
+	virtual void move() { m_model->change_pos(-m_delta_x, m_delta_y); };
 
 	/**
 	 *
@@ -96,6 +89,7 @@ protected:
 	std::string m_bullet_texture {};
 	int m_bullet_damage {0};
 	float m_bullet_speed {0};
+	bool m_friendly {false};
 
 	bool m_debug {true};
 };

@@ -4,7 +4,7 @@
 #include <fstream>
 #include <memory>
 #include "Entity.hpp"
-#include "../controllers/Controller.hpp"
+#include "BulletEntity.hpp"
 #include "../utils/Stopwatch.hpp"
 #include "../utils/json.hpp"
 
@@ -12,12 +12,22 @@ namespace sff
 {
 namespace data
 {
+struct Directions
+{
+	bool up {false};
+	bool down {false};
+	bool left {false};
+	bool right {false};
+};
 /**
  * @brief
  */
 class PlayerShipEntity : public Entity
 {
 public:
+	using shared = std::shared_ptr<PlayerShipEntity>;
+	using unique = std::unique_ptr<PlayerShipEntity>;
+	using weak = std::weak_ptr<PlayerShipEntity>;
 	/**
 	 * @brief
 	 */
@@ -25,7 +35,7 @@ public:
 	/**
 	 * @brief
 	 */
-	void move(Directions directions) override;
+	void move() override;
 	/**
 	 *
 	 */
@@ -35,7 +45,13 @@ public:
 	 * @return
 	 */
 	bool is_dead() const override { return m_health <= 0; };
-
+	/**
+	 *
+	 * @return
+	 */
+	Directions& dirs() { return m_direction; };
+private:
+	Directions m_direction;
 };
 
 }

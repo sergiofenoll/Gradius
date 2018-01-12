@@ -36,6 +36,11 @@ Entity()
 	std::uniform_real_distribution<float> y_dist(0.5, 2.5);
 	m_model->set_y_pos(y_dist(mt));
 
+	// std::cout << m_views[0]->get_max_texture_size() / 2 << std::endl;
+	auto game_coords = utils::Transformation::get_instance().transform(
+			utils::PixelPosition(m_views[0]->get_max_texture_size() / 2, 0));
+	m_model->set_radius(game_coords.x);
+
 	file.close();
 }
 

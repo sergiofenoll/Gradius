@@ -1,5 +1,4 @@
 #include "PlayerShipEntity.hpp"
-#include "BulletEntity.hpp"
 
 namespace sff
 {
@@ -23,15 +22,17 @@ Entity()
 	m_bullet_damage = config["bullet_damage"];
 	m_bullet_speed = config["bullet_speed"];
 
+	m_model->set_radius(m_views[0]->get_max_texture_size() / 2);
+
 	file.close();
 }
 
-void PlayerShipEntity::move(Directions directions)
+void PlayerShipEntity::move()
 {
-	if (directions.up) m_model->change_pos(0, -m_delta_y);
-	if (directions.down) m_model->change_pos(0, m_delta_y);
-	if (directions.left) m_model->change_pos(-m_delta_x, 0);
-	if (directions.right) m_model->change_pos(m_delta_x, 0);
+	if (m_direction.up) m_model->change_pos(0, -m_delta_y);
+	if (m_direction.down) m_model->change_pos(0, m_delta_y);
+	if (m_direction.left) m_model->change_pos(-m_delta_x, 0);
+	if (m_direction.right) m_model->change_pos(m_delta_x, 0);
 }
 
 void PlayerShipEntity::fire(std::vector<Entity::shared>& entities)

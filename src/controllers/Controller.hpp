@@ -4,6 +4,7 @@
 #include <cmath>
 #include <memory>
 #include "../entities/Entity.hpp"
+#include "../entities/PlayerShipEntity.hpp"
 
 namespace sff
 {
@@ -23,7 +24,7 @@ public:
 	 * @brief
 	 * @param event
 	 */
-	void handle_event(sf::Event event, sf::RenderWindow& window, data::Entity::shared player, std::vector<data::Entity::shared>& entities)
+	void handle_event(sf::Event event, sf::RenderWindow& window, data::PlayerShipEntity::shared player, std::vector<data::Entity::shared>& entities)
 	{
 		switch (event.type)
 		{
@@ -34,19 +35,41 @@ public:
 						window.close();
 						break;
 					case sf::Keyboard::W:
-						player->move(data::Directions {true});
+						player->dirs().up = true;
 						break;
 					case sf::Keyboard::S:
-						player->move(data::Directions {false, true});
+						player->dirs().down = true;
 						break;
 					case sf::Keyboard::A:
-						player->move(data::Directions {false, false, true});
+						player->dirs().left = true;
 						break;
 					case sf::Keyboard::D:
-						player->move(data::Directions {false, false, false, true});
+						player->dirs().right = true;
 						break;
 					case sf::Keyboard::Space:
 						player->fire(entities);
+						break;
+					default:
+						break;
+				}
+				break;
+			case sf::Event::KeyReleased:
+				switch (event.key.code)
+				{
+					case sf::Keyboard::Escape:
+						window.close();
+						break;
+					case sf::Keyboard::W:
+						player->dirs().up = false;
+						break;
+					case sf::Keyboard::S:
+						player->dirs().down = false;
+						break;
+					case sf::Keyboard::A:
+						player->dirs().left = false;
+						break;
+					case sf::Keyboard::D:
+						player->dirs().right = false;
 						break;
 					default:
 						break;
@@ -71,7 +94,6 @@ public:
 			{
 				if (collide((*it1)->get_model_obj(), (*it2)->get_model_obj()))
 				{
-					std::cout << "Collision!\n";
 					int old_health1 = (*it1)->get_health();
 					int old_health2 = (*it2)->get_health();
 					int new_health1 = old_health1 - (*it2)->get_damage();

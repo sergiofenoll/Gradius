@@ -17,7 +17,7 @@ class BulletEntity : public Entity
 public:
 	/**
 	 */
-	BulletEntity(std::string texture_filename, float speed, unsigned int damage, float pos_x, float pos_y, bool friendly)
+	BulletEntity(std::string texture_filename, float speed, unsigned int damage, float pos_x, float pos_y, bool friendly = false)
 	{
 		m_views.push_back(std::make_shared<gfx::View>(texture_filename));
 
@@ -26,18 +26,19 @@ public:
 		m_friendly = friendly;
 		m_model->set_x_pos(pos_x);
 		m_model->set_y_pos(pos_y);
+		auto game_coords = utils::Transformation::get_instance().transform(
+				utils::PixelPosition(m_views[0]->get_max_texture_size() / 2, 0));
+		m_model->set_radius(game_coords.x);
 	};
 	/**
 	 * @brief
 	 */
-	virtual void move(Directions directions = {}) { m_model->change_pos((m_friendly ? m_delta_x : -m_delta_x), m_delta_y); };
+	void move() override { m_model->change_pos((m_friendly ? m_delta_x : -m_delta_x), m_delta_y); };
 	/**
 	 *
 	 * @return
 	 */
 	bool is_dead() const override { return m_model->get_x_pos() > 4 or m_health <= 0; };
-private:
-	bool m_friendly;
 };
 
 }
