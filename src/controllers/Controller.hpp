@@ -61,11 +61,34 @@ public:
 	}
 	/**
 	 *
+	 * @param entities
+	 */
+	void collision_detection(std::vector<data::Entity::shared>& entities)
+	{
+		for (auto it1 = entities.begin(); it1 != entities.end(); ++it1)
+		{
+			for (auto it2 = it1 + 1; it2 != entities.end(); ++it2)
+			{
+				if (collide((*it1)->get_model_obj(), (*it2)->get_model_obj()))
+				{
+					std::cout << "Collision!\n";
+					int old_health1 = (*it1)->get_health();
+					int old_health2 = (*it2)->get_health();
+					int new_health1 = old_health1 - (*it2)->get_damage();
+					int new_health2 = old_health2 - (*it1)->get_damage();
+					(*it1)->set_health(new_health1);
+					(*it2)->set_health(new_health2);
+				}
+			}
+		}
+	}
+	/**
+	 *
 	 */
 	bool collide(const data::Model& m1, const data::Model& m2 )
 	{
 		return std::pow(m2.get_x_pos() - m1.get_x_pos(), 2)
-			   + std::pow(m1.get_y_pos() - m2.get_y_pos(), 2)
+			   + std::pow(m2.get_y_pos() - m1.get_y_pos(), 2)
 			   <= std::pow(m1.get_radius() + m2.get_radius(), 2);
 	};
 };

@@ -43,11 +43,9 @@ void Game::run()
 
 		m_levels[m_level_nr].draw_background(window);
 		std::vector<data::Entity::shared> survivors;
-		for (auto& entity : entities)
-		{
-			entity->move();
-			if (!entity->is_dead()) survivors.push_back(entity);
-		}
+		for (auto& entity : entities) entity->move();
+		controller->collision_detection(entities);
+		for (auto& entity : entities) if (!entity->is_dead()) survivors.push_back(entity);
 		entities = survivors;
 		for (auto& entity : entities) entity->notify(window);
 		player->notify(window);

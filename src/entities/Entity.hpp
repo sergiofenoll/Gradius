@@ -47,7 +47,7 @@ public:
 	/**
 	 * @brief
 	 */
-	virtual void move(Directions directions = {}) { m_model->change_pos(m_delta_x, m_delta_y); };
+	virtual void move(Directions directions = {}) { m_model->change_pos(-m_delta_x, m_delta_y); };
 
 	/**
 	 *
@@ -60,6 +60,30 @@ public:
 	 * @return
 	 */
 	virtual bool is_dead() const { return m_model->get_x_pos() < 0 or m_health <= 0; };
+
+	/**
+	 *
+	 * @return
+	 */
+	Model get_model_obj() const { return *m_model; };
+
+	/**
+	 *
+	 * @return
+	 */
+	int get_health() const { return m_health; };
+
+	/**
+	 *
+	 * @return
+	 */
+	int get_damage() const { return m_damage; };
+
+	/**
+	 *
+	 * @param health
+	 */
+	void set_health(const int& health) { m_health = health; };
 
 protected:
 	Model::unique m_model;

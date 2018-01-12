@@ -30,12 +30,24 @@ public:
 	 */
 	float get_radius() const { return m_radius; };
 	/**
+	 *
+	 * @param x_pos
 	 */
 	void set_x_pos(float x_pos) { m_x_pos = x_pos; };
 	/**
+	 *
+	 * @param y_pos
 	 */
 	void set_y_pos(float y_pos) { m_y_pos = y_pos; };
 	/**
+	 *
+	 * @param radius
+	 */
+	void set_radius(float radius) {m_radius = radius; };
+	/**
+	 *
+	 * @param delta_x
+	 * @param delta_y
 	 */
 	void change_pos(float delta_x, double delta_y)
 	{
@@ -45,7 +57,7 @@ public:
 private:
 	float m_x_pos;
 	float m_y_pos;
-	float m_radius {20};
+	float m_radius {0.05};
 };
 
 }

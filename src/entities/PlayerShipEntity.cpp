@@ -38,7 +38,7 @@ void PlayerShipEntity::fire(std::vector<Entity::shared>& entities)
 {
 	double x = m_model->get_x_pos();
 	double y = m_model->get_y_pos();
-	return entities.push_back(std::make_shared<BulletEntity>(m_bullet_texture, m_bullet_speed, m_bullet_damage, x, y));
+	return entities.push_back(std::make_shared<BulletEntity>(m_bullet_texture, m_bullet_speed, m_bullet_damage, x, y, true));
 }
 
 }
