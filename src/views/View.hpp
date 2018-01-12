@@ -29,10 +29,15 @@ public:
 	explicit View(std::string texture_filename);
 	/**
 	 * @brief
+	 * @param texture
+	 */
+	explicit View(sf::Texture texture);
+	/**
+	 * @brief
 	 * @param model
 	 * @param window
 	 */
-	void display(data::Model& model, sf::RenderWindow& window);
+	void display(data::Model& model, sf::RenderWindow& window, bool debug);
 private:
 	sf::Sprite m_sprite;
 	sf::Texture m_texture;

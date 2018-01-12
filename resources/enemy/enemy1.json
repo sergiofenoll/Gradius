@@ -1,6 +1,7 @@
 {
-  "delta_x": -0.00001,
-  "delta_y": 0.00,
+  "speed": 0.01,
   "fires": false,
-  "max_health": 1
+  "max_health": 1,
+  "uses_spritesheet": true,
+  "enemy_texture": "resources/sprites/enemy/enemy1.png"
 }

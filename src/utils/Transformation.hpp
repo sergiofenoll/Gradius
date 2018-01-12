@@ -48,7 +48,17 @@ public:
 		auto x_pix = static_cast<unsigned int>((coords.x / m_max_x_coor) * window_size.x);
 		auto y_pix = static_cast<unsigned int>((coords.y / m_max_y_coor) * window_size.y);
 		return PixelPosition(x_pix, y_pix);
-	}
+	};
+	/**
+	 *
+	 */
+	CoordPosition transform(const sf::RenderWindow& window, PixelPosition pixels) const
+	{
+		auto window_size = window.getSize();
+		auto x_coord = ((double) pixels.x / (double) window_size.x) * m_max_x_coor;
+		auto y_coord = ((double) pixels.y / (double) window_size.y) * m_max_y_coor;
+		return CoordPosition(x_coord, y_coord);
+	};
 private:
 	/**
 	 */

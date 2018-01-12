@@ -16,9 +16,6 @@ public:
 	/**
 	 */
 	ObstacleEntity();
-	/**
-	 */
-	virtual ~ObstacleEntity();
 private:
 };
 

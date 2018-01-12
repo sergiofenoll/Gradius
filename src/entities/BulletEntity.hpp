@@ -1,8 +1,10 @@
-#ifndef OBSTACLE_ENTITY_HPP
-#define OBSTACLE_ENTITY_HPP
+#ifndef BULLET_ENTITY_HPP
+#define BULLET_ENTITY_HPP
 
 #include <memory>
+#include <string>
 #include "Entity.hpp"
+#include "../utils/Stopwatch.hpp"
 
 namespace sff
 {
@@ -10,16 +12,27 @@ namespace data
 {
 /**
  */
-class ObstacleEntity : public Entity
+class BulletEntity : public Entity
 {
 public:
 	/**
 	 */
-	ObstacleEntity();
+	BulletEntity(std::string texture_filename, float speed, unsigned int damage, float pos_x, float pos_y)
+	{
+		m_views.push_back(std::make_shared<gfx::View>(texture_filename));
+
+		m_delta_x = speed / utils::Stopwatch::get_instance().get_fps();
+		m_delta_y = 0;
+		m_damage = damage;
+		m_health = 1;
+		m_model->set_x_pos(pos_x);
+		m_model->set_y_pos(pos_y);
+	};
 	/**
+	 *
+	 * @return
 	 */
-	virtual ~ObstacleEntity();
-private:
+	bool is_dead() const override { return m_model->get_x_pos() > 4 or m_health <= 0; };
 };
 
 }

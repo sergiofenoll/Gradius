@@ -33,6 +33,11 @@ public:
 		if (duration < m_tick_length)
 			std::this_thread::sleep_for(m_tick_length - duration);
 	};
+	/**
+	 *
+	 * @return
+	 */
+	float get_fps() { return 60.0; };
 private:
 	/**
 	 */

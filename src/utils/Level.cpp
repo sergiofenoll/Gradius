@@ -34,11 +34,12 @@ Level::Level(std::string config_filename)
 
 std::vector<data::Entity::shared> Level::get_next_wave()
 {
+	// if (m_wave_nr > m_waves.size()) return NULL;
 	std::vector<data::Entity::shared> current_wave;
 	for (EnemyConfig enemy_config : m_waves[m_wave_nr].enemies)
 	{
 		for (unsigned int _ = 0; _ < enemy_config.amount; ++_)
-			current_wave.push_back(std::make_shared<data::EnemyShipEntity>(nullptr, enemy_config.config_filename));
+			current_wave.push_back(std::make_shared<data::EnemyShipEntity>(enemy_config.config_filename));
 	}
 	++m_wave_nr;
 	return current_wave;
@@ -46,7 +47,6 @@ std::vector<data::Entity::shared> Level::get_next_wave()
 
 void Level::draw_background(sf::RenderWindow &window)
 {
-	m_background_sprite.move(0.01, 0);
 	window.draw(m_background_sprite);
 }
 

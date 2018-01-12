@@ -17,29 +17,35 @@ public:
 	using weak = std::weak_ptr<Model>;
 	/**
 	 */
-	explicit Model(double x = 0.0, double y = 1.5) : m_x_pos(x), m_y_pos(y) {};
+	explicit Model(float x = 0.0, float y = 1.5) : m_x_pos(x), m_y_pos(y) {};
 	/**
 	 */
-	double get_x_pos() const { return m_x_pos; };
+	float get_x_pos() const { return m_x_pos; };
 	/**
 	 */
-	double get_y_pos() const { return m_y_pos; };
+	float get_y_pos() const { return m_y_pos; };
+	/**
+	 *
+	 * @return
+	 */
+	float get_radius() const { return m_radius; };
 	/**
 	 */
-	void set_x_pos(double x_pos) { m_x_pos = x_pos; };
+	void set_x_pos(float x_pos) { m_x_pos = x_pos; };
 	/**
 	 */
-	void set_y_pos(double y_pos) { m_y_pos = y_pos; };
+	void set_y_pos(float y_pos) { m_y_pos = y_pos; };
 	/**
 	 */
-	void change_pos(double delta_x, double delta_y)
+	void change_pos(float delta_x, double delta_y)
 	{
 		m_x_pos += delta_x;
 		m_y_pos += delta_y;
 	};
 private:
-	double m_x_pos;
-	double m_y_pos;
+	float m_x_pos;
+	float m_y_pos;
+	float m_radius {20};
 };
 
 }

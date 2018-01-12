@@ -14,8 +14,7 @@ SET(SRC
 
 		src/controllers/Controller.hpp
 
-		src/entities/Entity.cpp
-		src/entities/Entity.hpp
+        src/entities/Entity.hpp
         src/entities/PlayerShipEntity.cpp
         src/entities/PlayerShipEntity.hpp
 		src/entities/EnemyShipEntity.cpp

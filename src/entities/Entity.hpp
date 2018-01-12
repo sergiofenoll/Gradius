@@ -5,12 +5,19 @@
 #include <memory>
 #include "../models/Model.hpp"
 #include "../views/View.hpp"
-#include "../controllers/Controller.hpp"
 
 namespace sff
 {
+
 namespace data
 {
+struct Directions
+{
+	bool up {false};
+	bool down {false};
+	bool left {false};
+	bool right {false};
+};
 /**
  * @brief
  */
@@ -20,42 +27,53 @@ public:
 	using shared = std::shared_ptr<Entity>;
 	using unique = std::unique_ptr<Entity>;
 	using weak = std::weak_ptr<Entity>;
-	enum class Key { UP, DOWN, LEFT, RIGHT, SPACE, NONE};
 	/**
 	 * @brief
 	 * @param controller
 	 */
-	explicit Entity(logic::Controller::shared controller)
-			: m_model(std::make_unique<Model>()), m_controller(controller) {};
+	explicit Entity() : m_model(std::make_unique<Model>()) {};
+
 	/**
 	 * @brief
 	 */
 	virtual ~Entity() = default;
+
 	/**
 	 * @brief
 	 * @param window
 	 */
-	void notify(sf::RenderWindow& window);
+	void notify(sf::RenderWindow &window) { for (auto view : m_views) view->display(*m_model, window, m_debug); };
+
 	/**
 	 * @brief
-	 * @param key
 	 */
-	virtual void control(const Key& key) = 0;
+	virtual void move(Directions directions = {}) { m_model->change_pos(m_delta_x, m_delta_y); };
+
+	/**
+	 *
+	 * @param entities
+	 */
+	virtual void fire(std::vector<Entity::shared>& entities) {};
+
 	/**
 	 * @brief
 	 * @return
 	 */
-	bool is_dead() const { return m_dead; };
-	/**
-	 * @brief
-	 * @param controller
-	 */
-	void set_controller(logic::Controller::weak controller) { m_controller = controller; };
+	virtual bool is_dead() const { return m_model->get_x_pos() < 0 or m_health <= 0; };
+
 protected:
 	Model::unique m_model;
-	logic::Controller::weak m_controller;
 	std::vector<gfx::View::shared> m_views;
-	bool m_dead {false};
+	float m_delta_x {0};
+	float m_delta_y {0};
+	int m_damage {1};
+	int m_health {1};
+
+	std::string m_bullet_texture {};
+	int m_bullet_damage {0};
+	float m_bullet_speed {0};
+
+	bool m_debug {true};
 };
 
 }

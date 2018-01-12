@@ -1,5 +1,5 @@
 {
-  "level_background": "resources/sprites/backgrounds/level1_.png",
+  "level_background": "resources/sprites/backgrounds/level1.png",
   "waves": [
     {
       "enemies" : [

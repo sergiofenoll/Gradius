@@ -3,9 +3,11 @@
 
 #include <fstream>
 #include <memory>
+#include <random>
 #include <string>
 #include "Entity.hpp"
 #include "../controllers/Controller.hpp"
+#include "../utils/Stopwatch.hpp"
 #include "../utils/json.hpp"
 
 namespace sff
@@ -13,22 +15,19 @@ namespace sff
 namespace data
 {
 /**
+ * @brief
  */
 class EnemyShipEntity : public Entity
 {
 public:
 	/**
+	 * @brief
 	 */
-	EnemyShipEntity(logic::Controller::shared controller, std::string config_filename);
-	void control(const Key& key) override;
+	EnemyShipEntity(std::string config_filename);
 private:
-	double m_delta_x;
-	double m_delta_y;
 	bool m_fires;
-	unsigned int m_damage;
 	unsigned int m_tick {0};
 	unsigned int m_ticks_between_bullets;
-	int m_health;
 };
 }
 }
