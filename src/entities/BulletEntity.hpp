@@ -5,43 +5,34 @@
 #include <string>
 #include "Entity.hpp"
 #include "../utils/Stopwatch.hpp"
+#include "../exceptions/FileException.hpp"
 
-namespace sff
-{
-namespace data
-{
+namespace sff {
+	namespace data {
 /**
  */
-class BulletEntity : public Entity
-{
-public:
-	/**
-	 */
-	BulletEntity(std::string texture_filename, float speed, unsigned int damage, float pos_x, float pos_y, bool friendly = false)
-	{
-		m_views.push_back(std::make_shared<gfx::View>(texture_filename));
+		class BulletEntity : public Entity {
+		public:
+			/**
+			 */
+			BulletEntity(std::string config_filename, float pos_x, float pos_y);
 
-		m_delta_x = speed / utils::Stopwatch::get_instance().get_fps();
-		m_damage = damage;
-		m_friendly = friendly;
-		m_model->set_x_pos(pos_x);
-		m_model->set_y_pos(pos_y);
-		auto game_coords = utils::Transformation::get_instance().transform(
-				utils::PixelPosition(m_views[0]->get_max_texture_size() / 2, 0));
-		m_model->set_radius(game_coords.x);
-	};
-	/**
-	 * @brief
-	 */
-	void move() override { m_model->change_pos((m_friendly ? m_delta_x : -m_delta_x), m_delta_y); };
-	/**
-	 *
-	 * @return
-	 */
-	bool is_dead() const override { return m_model->get_x_pos() > 4 or m_health <= 0; };
-};
+			/**
+			 * @brief
+			 */
+			void move() override;
 
-}
+			/**
+			 *
+			 * @return
+			 */
+			bool is_dead() const override;
+
+		private:
+			bool m_friendly{true};
+		};
+
+	}
 }
 
 #endif

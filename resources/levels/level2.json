@@ -1,17 +1,17 @@
 {
-  "background": "resources/sprites/backgrounds/space.png",
+  "background": "resources/sprites/backgrounds/nebula.png",
   "border_config_file": "resources/borders/border1.json",
   "waves": [
     {
       "enemies": [
         {
-          "amount": 5,
+          "amount": 20,
           "enemy_config_file": "resources/enemies/enemy1.json"
         }
       ],
       "obstacles": [
         {
-          "amount": 2,
+          "amount": 5,
           "obstacle_config_file": "resources/obstacles/obstacle1.json"
         }
       ]
@@ -19,8 +19,12 @@
     {
       "enemies": [
         {
-          "amount": 10,
+          "amount": 30,
           "enemy_config_file": "resources/enemies/enemy1.json"
+        },
+        {
+          "amount": 10,
+          "enemy_config_file": "resources/enemies/enemy2.json"
         }
       ],
       "obstacles": [
@@ -35,6 +39,10 @@
         {
           "amount": 20,
           "enemy_config_file": "resources/enemies/enemy1.json"
+        },
+        {
+          "amount": 20,
+          "enemy_config_file": "resources/enemies/enemy2.json"
         }
       ],
       "obstacles": [

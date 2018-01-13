@@ -1,0 +1,7 @@
+{
+  "speed": 2,
+  "health": 1,
+  "damage": 1,
+  "texture": "resources/sprites/bullets/bullet_enemy.png",
+  "friendly": false
+}

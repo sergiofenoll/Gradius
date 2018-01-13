@@ -1,7 +1,0 @@
-{
-  "speed": 0.01,
-  "fires": false,
-  "max_health": 1,
-  "uses_spritesheet": true,
-  "enemy_texture": "resources/sprites/enemy/enemy1.png"
-}

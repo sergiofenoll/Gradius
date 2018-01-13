@@ -33,7 +33,7 @@ SET(SRC
 
         src/views/View.hpp
         src/views/View.cpp
-        src/utils/Level.hpp src/utils/Level.cpp src/entities/EnemyShipEntity.cpp src/entities/BorderEntity.cpp src/entities/BorderEntity.hpp)
+        src/utils/Level.hpp src/utils/Level.cpp src/entities/EnemyShipEntity.cpp src/entities/BorderEntity.cpp src/entities/BorderEntity.hpp src/controllers/Controller.cpp src/entities/BulletEntity.cpp src/entities/Entity.cpp src/models/Model.cpp src/entities/ObstacleEntity.cpp src/exceptions/FileException.hpp)
 
 INCLUDE_DIRECTORIES(${SFML_INCLUDE_DIR})
 

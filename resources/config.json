@@ -1,6 +1,9 @@
 {
   "levels": [
-    "resources/levels/level1.json"
+    "resources/levels/level1.json",
+    "resources/levels/level2.json",
+    "resources/levels/level3.json"
   ],
-  "player_config": "resources/player.json"
+  "player_config_file": "resources/player.json",
+  "font": "resources/fonts/VT323.ttf"
 }

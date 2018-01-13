@@ -1,100 +1,112 @@
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
 
+#include <cmath>
+#include <fstream>
 #include <iostream>
 #include <memory>
+#include <list>
 #include "../models/Model.hpp"
 #include "../views/View.hpp"
+#include "../utils/json.hpp"
+#include "../utils/Stopwatch.hpp"
 
-namespace sff
-{
+namespace sff {
 
-namespace data
-{
+	namespace data {
 /**
  * @brief
  */
-class Entity
-{
-public:
-	using shared = std::shared_ptr<Entity>;
-	using unique = std::unique_ptr<Entity>;
-	using weak = std::weak_ptr<Entity>;
-	/**
-	 * @brief
-	 * @param controller
-	 */
-	explicit Entity() : m_model(std::make_unique<Model>()) {};
+		class Entity {
+		public:
+			using shared = std::shared_ptr<Entity>;
+			using unique = std::unique_ptr<Entity>;
+			using weak = std::weak_ptr<Entity>;
 
-	/**
-	 * @brief
-	 */
-	virtual ~Entity() = default;
+			/**
+			 * @brief
+			 */
+			explicit Entity(std::string config_filename);
 
-	/**
-	 * @brief
-	 * @param window
-	 */
-	void notify(sf::RenderWindow &window) { for (auto view : m_views) view->display(*m_model, window, m_debug); };
+			/**
+			 * @brief
+			 */
+			virtual ~Entity() = default;
 
-	/**
-	 * @brief
-	 */
-	virtual void move() { m_model->change_pos(-m_delta_x, m_delta_y); };
+			/**
+			 * @brief
+			 * @param window
+			 */
+			void notify(sf::RenderWindow &window);
 
-	/**
-	 *
-	 * @param entities
-	 */
-	virtual void fire(std::vector<Entity::shared>& entities) {};
+			/**
+			 * @brief
+			 */
+			virtual void move();
 
-	/**
-	 * @brief
-	 * @return
-	 */
-	virtual bool is_dead() const { return m_model->get_x_pos() < 0 or m_health <= 0; };
+			/**
+			 *
+			 * @param entities
+			 */
+			virtual void fire(std::list<Entity::shared> &entities);
 
-	/**
-	 *
-	 * @return
-	 */
-	Model get_model_obj() const { return *m_model; };
+			/**
+			 * @brief
+			 * @param other
+			 * @return
+			 */
+			virtual bool intersects(const Entity::shared other) const;
 
-	/**
-	 *
-	 * @return
-	 */
-	int get_health() const { return m_health; };
+			/**
+			 * @brief
+			 */
+			virtual void collided();
 
-	/**
-	 *
-	 * @return
-	 */
-	int get_damage() const { return m_damage; };
+			/**
+			 * @brief
+			 * @return
+			 */
+			virtual bool is_dead() const;
 
-	/**
-	 *
-	 * @param health
-	 */
-	void set_health(const int& health) { m_health = health; };
+			/**
+			 *
+			 * @return
+			 */
+			Model get_model_obj() const;
 
-protected:
-	Model::unique m_model;
-	std::vector<gfx::View::shared> m_views;
-	float m_delta_x {0};
-	float m_delta_y {0};
-	int m_damage {1};
-	int m_health {1};
+			/**
+			 *
+			 * @return
+			 */
+			int get_health() const;
 
-	std::string m_bullet_texture {};
-	int m_bullet_damage {0};
-	float m_bullet_speed {0};
-	bool m_friendly {false};
+			/**
+			 *
+			 * @return
+			 */
+			int get_damage() const;
 
-	bool m_debug {true};
-};
+			/**
+			 *
+			 * @param health
+			 */
+			void set_health(const int &health);
 
-}
+		protected:
+			Model::unique m_model;
+			std::vector<gfx::View::shared> m_views;
+			float m_delta_x{0};
+			float m_delta_y{0};
+			int m_damage{1};
+			int m_health{1};
+
+			int m_collision_tick{0};
+			bool m_collided{false};
+
+			bool m_debug{true};
+		};
+
+	}
 }
 
 #endif

@@ -1,8 +1,7 @@
 {
-  "player_texture": "resources/sprites/player/ship.png",
-  "bullet_texture": "resources/sprites/bullets/bullet_player.png",
-  "bullet_speed": 0.02,
-  "bullet_damage": 1,
-  "speed": 0.01,
-  "lives": 3
+  "speed": 1,
+  "health": 3,
+  "damage": 1,
+  "texture": "resources/sprites/player/alienspaceship.png",
+  "_bullet_config_file": "resources/bullets/friendly_bullet.json"
 }

@@ -1,0 +1,9 @@
+{
+  "speed": 1.5,
+  "health": 1,
+  "damage": 1,
+  "texture": "resources/sprites/enemy/largeorangeship.png",
+  "fires": true,
+  "ticks_between_bullets": 90,
+  "bullet_config_file": "resources/bullets/enemy_bullet.json"
+}

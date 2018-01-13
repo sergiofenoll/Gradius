@@ -1,0 +1,6 @@
+{
+  "speed": 0.7,
+  "health": 3,
+  "damage": 1,
+  "texture": "resources/sprites/obstacle/obstacle1.png"
+}
