@@ -23,15 +23,21 @@ namespace sff {
 									 bool pressed) const {
 			switch (event.key.code) {
 				case sf::Keyboard::W:
+				case sf::Keyboard::Z:
+				case sf::Keyboard::Up:
 					player->actions().up = pressed;
 					break;
 				case sf::Keyboard::S:
+				case sf::Keyboard::Down:
 					player->actions().down = pressed;
 					break;
 				case sf::Keyboard::A:
+				case sf::Keyboard::Q:
+				case sf::Keyboard::Left:
 					player->actions().left = pressed;
 					break;
 				case sf::Keyboard::D:
+				case sf::Keyboard::Right:
 					player->actions().right = pressed;
 					break;
 				case sf::Keyboard::Space:
