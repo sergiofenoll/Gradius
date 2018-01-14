@@ -183,8 +183,6 @@ namespace sff {
 						   std::to_string(m_levels[m_level_nr].get_wave_nr()));
 			text.setCharacterSize(24);
 			text.setColor(sf::Color::Black);
-			text.setOutlineColor(sf::Color::White);
-			text.setOutlineThickness(1);
 			text.setStyle(sf::Text::Bold);
 
 			window.draw(text);
