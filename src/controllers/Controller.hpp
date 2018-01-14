@@ -5,15 +5,13 @@
 #include <iterator>
 #include <list>
 #include <memory>
-#include "../entities/Entity.hpp"
 #include "../entities/PlayerShipEntity.hpp"
-#include "../entities/BorderEntity.hpp"
 
 namespace sff {
 	namespace logic {
 
 		/**
-		 * @brief
+		 * @brief Handles events for the player
 		 */
 		class Controller {
 		public:
@@ -21,56 +19,27 @@ namespace sff {
 			using unique = std::unique_ptr<Controller>;
 			using weak = std::weak_ptr<Controller>;
 
+			/**
+			 * @brief Default constructor
+			 */
 			Controller() = default;
 
 			/**
-			 * @brief
-			 * @param event
-			 * @param window
-			 * @param player
+			 * @brief Handle events for the player
+			 * @param window The game window. Can be closed if Escape is pressed
+			 * @param event The Event to be handled
+			 * @param player The player entity that will be affected by the event
 			 */
 			void handle_event(sf::RenderWindow &window, sf::Event event, data::PlayerShipEntity::shared player) const;
 
-			/**
-			 * @brief
-			 * @param e1
-			 * @param e2
-			 */
-			void collision_detection(std::list<data::Entity::shared> &e1, std::list<data::Entity::shared> &e2) const;
-
-			/**
-			 * @brief
-			 * @param e1
-			 * @param e2
-			 */
-			void collision_detection(std::list<data::Entity::shared> &e1, data::Entity::shared e2) const;
-
 		private:
 			/**
-			 * @brief
-			 * @param e1
-			 * @param e2
-			 * @return
+			 * @brief Turns actions for player on and off
+			 * @param event The event that determines what actions must be turned on/off
+			 * @param player The player whose actions will be affected
+			 * @param pressed True to turn on the actions, false to turn off
 			 */
-			bool intersects(data::Entity::shared e1, data::Entity::shared e2) const;
-
-			/**
-			 * @brief
-			 * @param b
-			 * @param p
-			 * @return
-			 */
-			bool intersects(data::BorderEntity::shared b, data::PlayerShipEntity::shared p) const;
-
-			/**
-			 * @brief
-			 * @param window
-			 * @param event
-			 * @param player
-			 * @param pressed
-			 */
-			void set_pressed(sf::RenderWindow &window, sf::Event event, data::PlayerShipEntity::shared player,
-							 bool pressed) const;
+			void set_pressed(sf::RenderWindow &window, sf::Event event, data::PlayerShipEntity::shared player, bool pressed) const;
 		};
 
 	}

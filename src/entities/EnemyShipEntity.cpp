@@ -5,43 +5,41 @@ namespace sff {
 
 		EnemyShipEntity::EnemyShipEntity(std::string config_filename) :
 				Entity(config_filename) {
-			std::ifstream file;
-			try {
-				file.open(config_filename);
-				if (!file.is_open()) throw(error::FileException(config_filename));
-			} catch (std::exception& e) {
-				throw e;
-			}
+			std::ifstream file(config_filename);
+			if (!file.is_open()) throw (error::FileOpenException(config_filename));
 
 			nlohmann::json config;
 			try {
 				file >> config;
-			} catch (std::exception& e) {
-				throw error::ConfigFileException(config_filename);
+			} catch (...) {
+				throw error::ParserOpenException(config_filename);
 			}
 
 			try {
-				m_fires = config["fires"];
-			} catch (std::exception& e) {
-				m_fires = false;
-			}
-			try {
+				try {
+					m_fires = config["fires"];
+				} catch (...) {
+					m_fires = false;
+					throw error::ParserFieldException(config_filename, "fires");
+				}
+
 				if (m_fires) {
 					try {
 						m_bullet_config_filename = config["bullet_config_file"];
-					} catch (std::exception& e) {
-						throw error::ConfigFileException(config_filename, "bullet_texture");
+					} catch (...) {
+						m_fires = false;
+						throw error::ParserFieldException(config_filename, "bullet_texture");
 					}
 
 					try {
 						m_ticks_between_bullets = config["ticks_between_bullets"];
-					} catch (std::exception& e) {
-						throw error::ConfigFileException(config_filename, "ticks_between_bullets");
+					} catch (...) {
+						m_fires = false;
+						throw error::ParserFieldException(config_filename, "ticks_between_bullets");
 					}
 				}
-			} catch(error::FileException& e) {
+			} catch (error::BaseException &e) {
 				std::cout << e.what() << std::endl;
-				m_fires = false;
 			}
 
 			std::random_device r; // Setup random seed
@@ -54,24 +52,20 @@ namespace sff {
 			m_model->set_y_pos(y_dist(mt));
 		}
 
-		void EnemyShipEntity::fire(std::list<Entity::shared> &entities) {
+		void EnemyShipEntity::fire(std::list<Entity::shared> &bullets) {
 			if (!m_fires) return;
 			if (m_tick == m_ticks_between_bullets) {
 				m_tick = 0;
 				double x = m_model->get_x_pos();
 				double y = m_model->get_y_pos();
 				try {
-					entities.push_back(std::make_shared<BulletEntity>(m_bullet_config_filename, x, y));
-				} catch (std::exception& e) {
+					bullets.push_back(std::make_shared<BulletEntity>(m_bullet_config_filename, x, y));
+				} catch (std::exception &e) {
 					std::cout << e.what() << std::endl;
 				}
 				return;
 			}
 			if (m_tick < m_ticks_between_bullets) ++m_tick;
-		}
-
-		void EnemyShipEntity::collided() {
-			m_collided = true;
 		}
 
 	}

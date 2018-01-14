@@ -14,9 +14,10 @@
 namespace sff {
 
 	namespace data {
-/**
- * @brief
- */
+		/**
+		 * @brief The base Entity class
+		 * Encapsulates the Model and the View
+		 */
 		class Entity {
 		public:
 			using shared = std::shared_ptr<Entity>;
@@ -24,71 +25,74 @@ namespace sff {
 			using weak = std::weak_ptr<Entity>;
 
 			/**
-			 * @brief
+			 * @brief Constructs a new Entity
+			 * Will throw an exception if the config file can't be opened
+			 * If any of the required fields aren't found in the config file, a default value is used
+			 * @param config_filename The name (and path) of the config file for the Entity
 			 */
 			explicit Entity(std::string config_filename);
 
 			/**
-			 * @brief
-			 */
-			virtual ~Entity() = default;
-
-			/**
-			 * @brief
-			 * @param window
+			 * @brief Notifies the view to display the model
+			 * @param window The window where the view will display the model
 			 */
 			void notify(sf::RenderWindow &window);
 
 			/**
-			 * @brief
+			 * @brief Moves the model to the left
+			 * It moves to the left unless overridden
 			 */
 			virtual void move();
 
 			/**
-			 *
-			 * @param entities
+			 * @brief No-op
+			 * Most Entities don't fire thus the base function does nothing
+			 * @param bullets Container that will not be touched
 			 */
-			virtual void fire(std::list<Entity::shared> &entities);
+			virtual void fire(std::list<Entity::shared> &bullets);
 
 			/**
-			 * @brief
-			 * @param other
-			 * @return
+			 * @brief Checks the collision between this and other
+			 * Collision is detected between two circles using following algorithm
+			 * https://stackoverflow.com/a/1736741/7258143
+			 * @param other The other entity that will be used to check collision
+			 * @return True if both entities collide, false otherwise
 			 */
-			virtual bool intersects(const Entity::shared other) const;
+			virtual bool collides(const Entity::shared other) const;
 
 			/**
-			 * @brief
+			 * @brief Turns on internal variable to display the Entity at half transparency for 60 ticks
+			 * fade() is called whenever the entity collides with another entity;
 			 */
-			virtual void collided();
+			virtual void fade();
 
 			/**
-			 * @brief
-			 * @return
+			 * @brief Checks if the entity is dead
+			 * @return True if health < 0 or entity is outside the game window, false otherwise
 			 */
 			virtual bool is_dead() const;
 
 			/**
-			 *
-			 * @return
+			 * @brief Returns the model of the entity
+			 * @return The model of the entity
 			 */
-			Model get_model_obj() const;
+			Model get_model() const;
 
 			/**
-			 *
-			 * @return
+			 * @brief Returns the health of the entity
+			 * @return The health of the entity
 			 */
 			int get_health() const;
 
 			/**
-			 *
-			 * @return
+			 * @brief Returns the damage done by the entity when collision happens
+			 * @return The damage done by the entity
 			 */
 			int get_damage() const;
 
 			/**
-			 *
-			 * @param health
+			 * @brief Sets the health of the entity
+			 * @param health The new health of the entity
 			 */
 			void set_health(const int &health);
 
@@ -97,13 +101,11 @@ namespace sff {
 			std::vector<gfx::View::shared> m_views;
 			float m_delta_x{0};
 			float m_delta_y{0};
-			int m_damage{1};
-			int m_health{1};
 
-			int m_collision_tick{0};
-			bool m_collided{false};
+			int m_fade_tick{0};
+			bool m_fade{false};
 
-			bool m_debug{true};
+			bool m_debug{false};
 		};
 
 	}

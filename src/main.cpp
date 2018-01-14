@@ -1,9 +1,9 @@
 #include "utils/Game.hpp"
 
 int main() {
-	try{
+	try {
 		sff::utils::Game::get_instance().run();
-	} catch(std::exception& e) {
+	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
 	return 0;

@@ -9,58 +9,73 @@
 #include "../entities/BorderEntity.hpp"
 #include "../entities/EnemyShipEntity.hpp"
 #include "../entities/ObstacleEntity.hpp"
-#include "../exceptions/FileException.hpp"
+#include "../exceptions/BaseException.hpp"
 
 namespace sff {
 	namespace utils {
 
+		/**
+		 * @brief POD struct
+		 * Holds data about obstacles
+		 */
 		struct ObstacleConfig {
 			unsigned int amount;
 			std::string config_filename;
 		};
 
+		/**
+		 * @brief POD struct
+		 * Holds data about enemies
+		 */
 		struct EnemyConfig {
 			unsigned int amount;
 			std::string config_filename;
 		};
 
+		/**
+		 * @brief POD struct
+		 * Holds data about a wave
+		 */
 		struct Wave {
 			std::vector<EnemyConfig> enemies;
 			std::vector<ObstacleConfig> obstacles;
 		};
 
 		/**
-		 * @brief
+		 * @brief Level class
+		 * Holds level related info like waves, background and borders
 		 */
 		class Level {
 		public:
 			/**
-			 * @brief
-			 * @param config_filename
+			 * @brief Constructs a new Level
+			 * @param config_filename The name (and path) of the config file for the Level
 			 */
 			explicit Level(std::string config_filename);
 
 			/**
-			 * @brief
-			 * @return
+			 * @brief Returns a list of enemies and obstacles in the next wave
+			 * Can return an empty list, this happens if there is no next wave
+			 * @return List of entities
 			 */
 			std::list<data::Entity::shared> get_next_wave();
 
 			/**
-			 * @brief
-			 * @return
+			 * @brief Returns a list of the level borders
+			 * @return A list of entities
 			 */
 			std::list<data::Entity::shared> get_borders();
 
 			/**
-			 * @brief
-			 * @param window
+			 * @brief Draws the background
+			 * @param window The window the background will be drawn on
 			 */
 			void draw_background(sf::RenderWindow &window);
 
 			/**
-			 * @brief
-			 * @return
+			 * @brief Returns the current wave number
+			 * Used by draw_ui() to display the wave number
+			 * @return The wave number
 			 */
 			unsigned int get_wave_nr() const;
 

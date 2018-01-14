@@ -6,14 +6,15 @@
 #include <list>
 #include "Entity.hpp"
 #include "BulletEntity.hpp"
-#include "../exceptions/FileException.hpp"
+#include "../exceptions/BaseException.hpp"
 #include "../utils/Stopwatch.hpp"
 #include "../utils/json.hpp"
 
 namespace sff {
 	namespace data {
 		/**
-		 * @brief
+		 * @brief POD struct
+		 * Holds bools denoting possible player actions
 		 */
 		struct Actions {
 			bool up{false};
@@ -24,7 +25,7 @@ namespace sff {
 		};
 
 		/**
-		 * @brief
+		 * @brief Entity that represents the friendly player spaceship
 		 */
 		class PlayerShipEntity : public Entity {
 		public:
@@ -33,38 +34,40 @@ namespace sff {
 			using weak = std::weak_ptr<PlayerShipEntity>;
 
 			/**
-			 * @brief
-			 * @param config_filename
+			 * @brief Constructs a new PlayerShipEntity
+			 * @param config_filename The name (and path) of the config file for the PlayerShipEntity
 			 */
 			explicit PlayerShipEntity(std::string config_filename);
 
 			/**
-			 * @brief
+			 * @brief Overrides move() to use player actions and bound the player to the game window
 			 */
 			void move() override;
 
 			/**
-			 * @brief
-			 * @param entities
+			 * @brief Creates friendly bullets and appends them to bullets
+			 * Friendly bullets go to the right
+			 * @param bullets The list of bullets
 			 */
-			void fire(std::list<Entity::shared> &entities) override;
+			void fire(std::list<Entity::shared> &bullets) override;
 
 			/**
-			 * @brief
+			 * @brief The same fade as any other entity but also respawns the player to it's original position
 			 */
-			void collided() override;
+			void fade() override;
 
 			/**
-			 * @brief
-			 * @return
+			 * @brief Overrides is_dead() so that it only checks health
+			 * @return True if health < 0, false otherwise
 			 */
 			bool is_dead() const override;
 
 			/**
-			 * @brief
-			 * @return
+			 * @brief Returns a reference to the player actions
+			 * @return A reference to the player actions
 			 */
 			Actions &actions();
+
 		private:
 			Actions m_actions;
 			unsigned int m_tick{0};

@@ -5,26 +5,29 @@ namespace sff {
 
 		PlayerShipEntity::PlayerShipEntity(std::string config_filename) :
 				Entity(config_filename) {
-			std::ifstream file;
-			try {
-				file.open(config_filename);
-				if (!file.is_open()) throw(error::FileException(config_filename));
-			} catch (std::exception& e) {
-				throw e;
-			}
+			std::ifstream file(config_filename);
+			if (!file.is_open()) throw (error::FileOpenException(config_filename));
 
 			nlohmann::json config;
 			try {
 				file >> config;
-			} catch (std::exception& e) {
-				throw error::ConfigFileException(config_filename);
+			} catch (std::exception &e) {
+				throw error::ParserOpenException(config_filename);
 			}
 
 			try {
-				m_bullet_config_filename = config["bullet_config_file"];
-			} catch (std::exception& e) {}
+				try {
+					m_bullet_config_filename = config["bullet_config_file"];
+				} catch (...) {
+					throw error::ParserFieldException(config_filename, "bullet_config_file");
+				}
+			} catch (std::exception &e) {
+				std::cout << e.what() << std::endl;
+			}
 
 			m_delta_y = m_delta_x;
+			m_model->set_x_pos(0.5);
+			m_model->set_y_pos(1.5);
 		}
 
 		void PlayerShipEntity::move() {
@@ -39,14 +42,15 @@ namespace sff {
 				m_model->change_pos(m_delta_x, 0);
 		}
 
-		void PlayerShipEntity::fire(std::list<Entity::shared> &entities) {
+		void PlayerShipEntity::fire(std::list<Entity::shared> &bullets) {
+			if (m_bullet_config_filename.empty()) return;
 			if (m_actions.fire and m_tick == m_ticks_between_bullets) {
 				m_tick = 0;
 				double x = m_model->get_x_pos();
 				double y = m_model->get_y_pos();
 				try {
-					entities.push_back(std::make_shared<BulletEntity>(m_bullet_config_filename, x, y));
-				} catch (std::exception& e) {
+					bullets.push_back(std::make_shared<BulletEntity>(m_bullet_config_filename, x, y));
+				} catch (std::exception &e) {
 					std::cout << e.what() << std::endl;
 				}
 				return;
@@ -54,17 +58,17 @@ namespace sff {
 			if (m_tick < m_ticks_between_bullets) ++m_tick;
 		}
 
-		void PlayerShipEntity::collided() {
-			m_collided = true;
+		void PlayerShipEntity::fade() {
+			m_fade = true;
 			m_model->set_x_pos(0.5);
 			m_model->set_y_pos(1.5);
 		}
 
 		bool PlayerShipEntity::is_dead() const {
-			return m_health <= 0;
+			return get_health() <= 0;
 		}
 
-		Actions& PlayerShipEntity::actions() {
+		Actions &PlayerShipEntity::actions() {
 			return m_actions;
 		}
 

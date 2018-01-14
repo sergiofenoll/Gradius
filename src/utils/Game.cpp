@@ -5,38 +5,36 @@ namespace sff {
 	namespace utils {
 
 		Game::Game(std::string config_filename) {
-			std::ifstream file;
-			try {
-				file.open(config_filename);
-				if (!file.is_open()) throw error::FileException(config_filename);
-			} catch (std::exception& e) {
-				throw e;
-			}
+			std::ifstream file(config_filename);
+			if (!file.is_open()) throw error::FileOpenException(config_filename);
 
 			try {
 				file >> m_config;
-			} catch (std::exception& e) {
-				throw error::ConfigFileException(config_filename);
+			} catch (...) {
+				throw error::ParserOpenException(config_filename);
 			}
 
 			std::string font_file;
 			try {
-				font_file = m_config["font"];
-			} catch (std::exception& e) {
-				error::ConfigFileException err(config_filename, "font");
-				std::cout << err.what() << std::endl;
+				try {
+					font_file = m_config["font"];
+				} catch (...) {
+					throw error::ParserFieldException(config_filename, "font");
+				}
+			} catch (std::exception &e) {
+				std::cout << e.what() << std::endl;
 			}
 
 			try {
-				if (!m_font.loadFromFile(font_file)) throw error::MediaFileException(font_file);
-			} catch (std::exception& e) {
+				if (!m_font.loadFromFile(font_file)) throw error::FileOpenException(font_file);
+			} catch (std::exception &e) {
 				std::cout << e.what() << std::endl;
 			}
 
 			for (std::string level_config_filename : m_config["levels"]) {
 				try {
 					m_levels.emplace_back(level_config_filename);
-				} catch (error::FileException &e) {
+				} catch (std::exception &e) {
 					std::cout << e.what() << std::endl;
 				}
 			}
@@ -51,16 +49,11 @@ namespace sff {
 			std::string player_config;
 			try {
 				player_config = m_config["player_config_file"];
-			} catch (std::exception& e) {
-				throw error::ConfigFileException(m_config_filename, "player_config_file");
+			} catch (...) {
+				throw error::ParserFieldException(m_config_filename, "player_config_file");
 			}
 
-			data::PlayerShipEntity::shared player;
-			try {
-				player = std::make_shared<data::PlayerShipEntity>(player_config);
-			} catch (std::exception& e) {
-				throw e;
-			}
+			auto player = std::make_shared<data::PlayerShipEntity>(player_config);
 
 			std::list<data::Entity::shared> enemies;
 			std::list<data::Entity::shared> borders;
@@ -80,7 +73,7 @@ namespace sff {
 						if (++m_level_nr < m_levels.size()) {
 							enemies = m_levels[m_level_nr].get_next_wave();
 						} else {
-							draw_game_over_screen(window);
+							draw_victory_screen(window);
 							break;
 						}
 					}
@@ -91,10 +84,10 @@ namespace sff {
 
 				m_levels[m_level_nr].draw_background(window);
 
-				controller->collision_detection(player_bullets, enemies);
-				controller->collision_detection(enemy_bullets, player);
-				controller->collision_detection(enemies, player);
-				controller->collision_detection(borders, player);
+				collision_detection(player_bullets, enemies);
+				collision_detection(enemy_bullets, player);
+				collision_detection(enemies, player);
+				collision_detection(borders, player);
 
 				update_entities(window, borders);
 				update_entities(window, player_bullets);
@@ -110,6 +103,38 @@ namespace sff {
 
 				Stopwatch::get_instance().end();
 				window.display();
+			}
+		}
+
+		void Game::collision_detection(std::list<data::Entity::shared> &e1, std::list<data::Entity::shared> &e2) const {
+			for (auto it1 = e1.begin(); it1 != e1.end(); ++it1) {
+				for (auto it2 = e2.begin(); it2 != e2.end(); ++it2) {
+					if ((*it1)->collides(*it2)) {
+						int old_health1 = (*it1)->get_health();
+						int old_health2 = (*it2)->get_health();
+						int new_health1 = old_health1 - (*it2)->get_damage();
+						int new_health2 = old_health2 - (*it1)->get_damage();
+						(*it1)->set_health(new_health1);
+						(*it2)->set_health(new_health2);
+						(*it1)->fade();
+						(*it2)->fade();
+					}
+				}
+			}
+		}
+
+		void Game::collision_detection(std::list<data::Entity::shared> &e1, data::Entity::shared e2) const {
+			for (auto it1 = e1.begin(); it1 != e1.end(); ++it1) {
+				if ((*it1)->collides(e2)) {
+					int old_health1 = (*it1)->get_health();
+					int old_health2 = e2->get_health();
+					int new_health1 = old_health1 - e2->get_damage();
+					int new_health2 = old_health2 - (*it1)->get_damage();
+					(*it1)->set_health(new_health1);
+					e2->set_health(new_health2);
+					(*it1)->fade();
+					e2->fade();
+				}
 			}
 		}
 
@@ -196,7 +221,7 @@ namespace sff {
 			}
 		}
 
-		void Game::draw_game_over_screen(sf::RenderWindow &window) {
+		void Game::draw_victory_screen(sf::RenderWindow &window) {
 			sf::Text game_over;
 			sf::Text subtext;
 

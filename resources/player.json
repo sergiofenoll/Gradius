@@ -3,5 +3,5 @@
   "health": 3,
   "damage": 1,
   "texture": "resources/sprites/player/alienspaceship.png",
-  "_bullet_config_file": "resources/bullets/friendly_bullet.json"
+  "bullet_config_file": "resources/bullets/friendly_bullet.json"
 }

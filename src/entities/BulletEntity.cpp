@@ -3,25 +3,25 @@
 namespace sff {
 	namespace data {
 		BulletEntity::BulletEntity(std::string config_filename, float pos_x, float pos_y) : Entity(config_filename) {
-			std::ifstream file;
-			try {
-				file.open(config_filename);
-				if (!file.is_open()) throw(error::FileException(config_filename));
-			} catch (std::exception& e) {
-				throw;
-			}
+			std::ifstream file(config_filename);
+			if (!file.is_open()) throw (error::FileOpenException(config_filename));
 
 			nlohmann::json config;
 			try {
 				file >> config;
-			} catch (std::exception& e) {
-				throw error::ConfigFileException(config_filename);
+			} catch (...) {
+				throw error::ParserOpenException(config_filename);
 			}
 
 			try {
-				m_friendly = config["friendly"];
-			} catch (std::exception& e) {
-				m_friendly = true;
+				try {
+					m_friendly = config["friendly"];
+				} catch (...) {
+					m_friendly = true;
+					throw error::ParserFieldException(config_filename, "friendly");
+				}
+			} catch (std::exception &e) {
+				std::cout << e.what() << std::endl;
 			}
 
 			m_model->set_x_pos(pos_x);
@@ -32,12 +32,16 @@ namespace sff {
 			m_model->change_pos((m_friendly ? m_delta_x : -m_delta_x), m_delta_y);
 		}
 
+		void BulletEntity::fade() {
+			m_fade = false;
+		}
+
 		bool BulletEntity::is_dead() const {
 			auto x_pos = m_model->get_x_pos();
 			if (m_friendly)
-				return (x_pos > 4) or m_health <= 0;
+				return (x_pos > 4) or get_health() <= 0;
 			else
-				return (x_pos < 0) or m_health <= 0;
+				return (x_pos < 0) or get_health() <= 0;
 		}
 	}
 }
