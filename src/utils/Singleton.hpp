@@ -1,5 +1,4 @@
-#ifndef SINGLETON_HPP
-#define SINGLETON_HPP
+#pragma once
 
 namespace sff {
 	namespace utils {
@@ -31,5 +30,3 @@ namespace sff {
 		};
 	}
 }
-
-#endif

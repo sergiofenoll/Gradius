@@ -1,0 +1,5 @@
+<map id="sff::utils::Game::draw_death_screen" name="sff::utils::Game::draw_death_screen">
+<area shape="rect" id="node2" href="$classsff_1_1utils_1_1Singleton.html#aea27a658e56c5171eb53cc7c6a1797aa" title="Returns the single instance of the object. " alt="" coords="215,5,425,47"/>
+<area shape="rect" id="node3" href="$classsff_1_1utils_1_1Stopwatch.html#a587ae23e851095f283b420a266f99cf3" title="Starts the stopwatch. " alt="" coords="245,71,395,112"/>
+<area shape="rect" id="node4" href="$classsff_1_1utils_1_1Stopwatch.html#a1e7678f81f22c56036c6e07e85ca3087" title="Stops the stopwatch and sleeps until the tick length has been reached. " alt="" coords="229,137,411,163"/>
+</map>

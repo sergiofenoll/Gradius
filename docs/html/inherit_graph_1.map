@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classsff_1_1data_1_1Entity.html" title="The base Entity class Encapsulates the Model and the View. " alt="" coords="5,107,127,133"/>
+<area shape="rect" id="node2" href="$classsff_1_1data_1_1BorderEntity.html" title="Entity that represents the deadly borders of the game window. " alt="" coords="190,5,354,32"/>
+<area shape="rect" id="node3" href="$classsff_1_1data_1_1BulletEntity.html" title="Entity that represents the deadly projectiles fired by the spaceships. " alt="" coords="193,56,351,83"/>
+<area shape="rect" id="node4" href="$classsff_1_1data_1_1EnemyShipEntity.html" title="Entity that represents the deadly enemy spaceships. " alt="" coords="175,107,369,133"/>
+<area shape="rect" id="node5" href="$classsff_1_1data_1_1ObstacleEntity.html" title="Entity that represents the deadly floating obstacles in space. " alt="" coords="183,157,361,184"/>
+<area shape="rect" id="node6" href="$classsff_1_1data_1_1PlayerShipEntity.html" title="Entity that represents the friendly player spaceship. " alt="" coords="177,208,367,235"/>
+</map>

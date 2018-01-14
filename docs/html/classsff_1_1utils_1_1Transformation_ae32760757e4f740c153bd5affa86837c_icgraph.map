@@ -1,0 +1,4 @@
+<map id="sff::utils::Transformation::transform_y" name="sff::utils::Transformation::transform_y">
+<area shape="rect" id="node2" href="$classsff_1_1gfx_1_1View.html#a556d7890c7c1ac7d35c8c9dfe1744a24" title="Returns the texture height in game coordinates (the model&#39;s height) " alt="" coords="233,5,368,47"/>
+<area shape="rect" id="node3" href="$classsff_1_1gfx_1_1View.html#ab57269d7a6a97d81c8e1692a6bb9f4ea" title="Returns the radius of the largest inner circle of the texture (the model&#39;s radius) ..." alt="" coords="416,5,551,47"/>
+</map>

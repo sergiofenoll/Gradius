@@ -7,7 +7,14 @@
 #include <memory>
 #include "../entities/PlayerShipEntity.hpp"
 
+/**
+ * @brief Namespace for Sergio Fenoll (Freire)
+ * Extra (unique) layer, if a logic::Controller where to be included there'd be no namespace collision
+ */
 namespace sff {
+	/**
+	 * @brief Namespace for game logic
+	 */
 	namespace logic {
 
 		/**
@@ -39,7 +46,8 @@ namespace sff {
 			 * @param player The player whose actions will be affected
 			 * @param pressed True to turn on the actions, false to turn off
 			 */
-			void set_pressed(sf::RenderWindow &window, sf::Event event, data::PlayerShipEntity::shared player, bool pressed) const;
+			void set_pressed(sf::RenderWindow &window, sf::Event event, data::PlayerShipEntity::shared player,
+							 bool pressed) const;
 		};
 
 	}

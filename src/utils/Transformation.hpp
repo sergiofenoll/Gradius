@@ -1,5 +1,4 @@
-#ifndef TRANSFORMATION_HPP
-#define TRANSFORMATION_HPP
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include "Singleton.hpp"
@@ -123,5 +122,3 @@ namespace sff {
 
 	}
 }
-
-#endif

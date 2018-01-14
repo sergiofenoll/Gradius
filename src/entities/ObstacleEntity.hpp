@@ -1,5 +1,4 @@
-#ifndef OBSTACLE_ENTITY_HPP
-#define OBSTACLE_ENTITY_HPP
+#pragma once
 
 #include <fstream>
 #include <memory>
@@ -24,5 +23,3 @@ namespace sff {
 
 	}
 }
-
-#endif

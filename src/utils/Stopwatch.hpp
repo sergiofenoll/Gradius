@@ -1,5 +1,4 @@
-#ifndef STOPWATCH_HPP
-#define STOPWATCH_HPP
+#pragma once
 
 #include <chrono>
 #include <thread>
@@ -50,5 +49,3 @@ namespace sff {
 	}
 
 }
-
-#endif

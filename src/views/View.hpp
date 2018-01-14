@@ -1,5 +1,4 @@
-#ifndef VIEW_HPP
-#define VIEW_HPP
+#pragma once
 
 #include <iostream>
 #include <memory>
@@ -11,6 +10,9 @@
 #include "../utils/Transformation.hpp"
 
 namespace sff {
+	/**
+	 * @brief Namespace for game representation
+	 */
 	namespace gfx {
 		/**
 		 * @brief View
@@ -66,5 +68,3 @@ namespace sff {
 
 	}
 }
-
-#endif

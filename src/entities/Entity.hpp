@@ -12,7 +12,9 @@
 #include "../utils/Stopwatch.hpp"
 
 namespace sff {
-
+	/**
+	 * @brief Namespace for game data
+	 */
 	namespace data {
 		/**
 		 * @brief The base Entity class

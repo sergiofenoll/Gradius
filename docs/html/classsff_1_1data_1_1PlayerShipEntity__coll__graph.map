@@ -1,0 +1,4 @@
+<map id="sff::data::PlayerShipEntity" name="sff::data::PlayerShipEntity">
+<area shape="rect" id="node2" href="$classsff_1_1data_1_1Entity.html" title="The base Entity class Encapsulates the Model and the View. " alt="" coords="5,5,127,32"/>
+<area shape="rect" id="node3" href="$structsff_1_1data_1_1Actions.html" title="POD struct Holds bools denoting possible player actions. " alt="" coords="151,5,282,32"/>
+</map>

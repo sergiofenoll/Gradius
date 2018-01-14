@@ -1,0 +1,9 @@
+<map id="sff::gfx::View::display" name="sff::gfx::View::display">
+<area shape="rect" id="node2" href="$classsff_1_1data_1_1Model.html#a21e44ca6923c9391d93eb5a53c7f4b2d" title="Returns the model&#39;s x position. " alt="" coords="229,5,380,47"/>
+<area shape="rect" id="node3" href="$classsff_1_1gfx_1_1View.html#a75e09d59329b3936e5ce0d490c70cfa8" title="Returns the texture width in game coordinates (the model&#39;s width) " alt="" coords="237,123,372,164"/>
+<area shape="rect" id="node4" href="$classsff_1_1utils_1_1Singleton.html#aea27a658e56c5171eb53cc7c6a1797aa" title="Returns the single instance of the object. " alt="" coords="443,49,622,105"/>
+<area shape="rect" id="node6" href="$classsff_1_1utils_1_1Transformation.html#a2c1bf88a2e04b55d824148a46677b024" title="Transforms a game coordinates into pixel coordinates. " alt="" coords="215,188,395,229"/>
+<area shape="rect" id="node8" href="$classsff_1_1data_1_1Model.html#a8d9091f8e21f1bbd73010861637ed5d6" title="Returns the model&#39;s y position. " alt="" coords="229,253,380,295"/>
+<area shape="rect" id="node5" href="$classsff_1_1utils_1_1Transformation.html#a3f949ead8dfe53fcab3025690da400c4" title="Transform a game x position into a pixel x position. " alt="" coords="443,129,623,171"/>
+<area shape="rect" id="node7" href="$structsff_1_1utils_1_1PixelPosition.html#a871c4011a7b306d23a71dfc505be1752" title="Constructs a PixelPosition. " alt="" coords="449,195,616,236"/>
+</map>

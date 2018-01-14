@@ -19,7 +19,8 @@ namespace sff {
 			}
 		}
 
-		void Controller::set_pressed(sf::RenderWindow &window, sf::Event event, data::PlayerShipEntity::shared player, bool pressed) const {
+		void Controller::set_pressed(sf::RenderWindow &window, sf::Event event, data::PlayerShipEntity::shared player,
+									 bool pressed) const {
 			switch (event.key.code) {
 				case sf::Keyboard::W:
 					player->actions().up = pressed;

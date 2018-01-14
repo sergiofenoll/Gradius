@@ -1,0 +1,25 @@
+var classsff_1_1data_1_1Model =
+[
+    [ "shared", "classsff_1_1data_1_1Model.html#a519c43f22f403c196fdef483d2f6f049", null ],
+    [ "unique", "classsff_1_1data_1_1Model.html#a3aee9fda30510268ed012ca88ea16e1d", null ],
+    [ "weak", "classsff_1_1data_1_1Model.html#a01e0c8d0cc6ee64cbb136f1a70d64722", null ],
+    [ "Model", "classsff_1_1data_1_1Model.html#aad5f58391b65655b7f37f7cf6c2c59ba", null ],
+    [ "change_pos", "classsff_1_1data_1_1Model.html#a076d77ce7bf5bedf32165e9cd48578f5", null ],
+    [ "get_damage", "classsff_1_1data_1_1Model.html#af74ec9515e1e62934426df20ac0f9603", null ],
+    [ "get_health", "classsff_1_1data_1_1Model.html#abc62e890447bdabbd57a51b3b20d5f71", null ],
+    [ "get_height", "classsff_1_1data_1_1Model.html#a2ae43e8d2fe4a468724ca76b47ba8fce", null ],
+    [ "get_radius", "classsff_1_1data_1_1Model.html#a1bf8b0b992f7cf04ccfec134358b6ea9", null ],
+    [ "get_width", "classsff_1_1data_1_1Model.html#aa0369d578c3c812d07a7e2d9d56219d3", null ],
+    [ "get_x_pos", "classsff_1_1data_1_1Model.html#a21e44ca6923c9391d93eb5a53c7f4b2d", null ],
+    [ "get_y_pos", "classsff_1_1data_1_1Model.html#a8d9091f8e21f1bbd73010861637ed5d6", null ],
+    [ "set_health", "classsff_1_1data_1_1Model.html#a65f1ad245c5921e89bafadd4032a728a", null ],
+    [ "set_x_pos", "classsff_1_1data_1_1Model.html#ac58093aee6a871e72573f643fccf3f54", null ],
+    [ "set_y_pos", "classsff_1_1data_1_1Model.html#a2a76cdbdda859321f7c54f6ae0597317", null ],
+    [ "m_damage", "classsff_1_1data_1_1Model.html#ab83e06d43952562e036ca1328190c1c3", null ],
+    [ "m_health", "classsff_1_1data_1_1Model.html#a5bf99cdae7960622d6855de58ccf6d65", null ],
+    [ "m_height", "classsff_1_1data_1_1Model.html#adeab982b76822f102401905375d6755a", null ],
+    [ "m_radius", "classsff_1_1data_1_1Model.html#a4732c681b1087259b5bae703d17a51a9", null ],
+    [ "m_width", "classsff_1_1data_1_1Model.html#a72a1f9fdebc24d743d6df55288e1424f", null ],
+    [ "m_x_pos", "classsff_1_1data_1_1Model.html#af85d3b44a4c9f6744c97290a600230d2", null ],
+    [ "m_y_pos", "classsff_1_1data_1_1Model.html#ad708b399abbff6fe3f0fabe092cf161c", null ]
+];

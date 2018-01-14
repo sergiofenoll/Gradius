@@ -1,0 +1,4 @@
+<map id="sff::gfx::View::get_texture_width" name="sff::gfx::View::get_texture_width">
+<area shape="rect" id="node2" href="$classsff_1_1utils_1_1Singleton.html#aea27a658e56c5171eb53cc7c6a1797aa" title="Returns the single instance of the object. " alt="" coords="189,5,367,61"/>
+<area shape="rect" id="node3" href="$classsff_1_1utils_1_1Transformation.html#a3f949ead8dfe53fcab3025690da400c4" title="Transform a game x position into a pixel x position. " alt="" coords="188,86,368,127"/>
+</map>

@@ -5,6 +5,9 @@
 #include <stdexcept>
 
 namespace sff {
+	/**
+	 * @brief Namespace for custom exceptions
+	 */
 	namespace error {
 		/**
 		 * @brief Base exception, all other custom exceptions from it

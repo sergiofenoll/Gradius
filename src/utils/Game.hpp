@@ -1,5 +1,4 @@
-#ifndef GAME_HPP
-#define GAME_HPP
+#pragma once
 
 #include <fstream>
 #include <iostream>
@@ -20,6 +19,9 @@
 #include "../entities/ObstacleEntity.hpp"
 
 namespace sff {
+	/**
+	 * @brief Namespace for different utility classes
+	 */
 	namespace utils {
 
 		/**
@@ -53,7 +55,7 @@ namespace sff {
 			 * Iterates over the list and checks if any member collides with the single entity
 			 * This is useful for collision detection between player and everything else,
 			 * because there's only one player, otherwise the player would have to be placed inside a list
-			 * (to be able to call collision_detection(list, list)
+			 * (to be able to call collision_detection(list, list))
 			 * @param e1 The list of entities
 			 * @param e2 The single entity
 			 */
@@ -108,5 +110,3 @@ namespace sff {
 	}
 
 }
-
-#endif

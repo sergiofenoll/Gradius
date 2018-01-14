@@ -1,5 +1,4 @@
-#ifndef PLAYER_SHIP_ENTITY_HPP
-#define PLAYER_SHIP_ENTITY_HPP
+#pragma once
 
 #include <fstream>
 #include <memory>
@@ -77,5 +76,3 @@ namespace sff {
 
 	}
 }
-
-#endif

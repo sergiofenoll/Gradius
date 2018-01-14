@@ -1,0 +1,4 @@
+<map id="sff::gfx::View::get_texture_height" name="sff::gfx::View::get_texture_height">
+<area shape="rect" id="node2" href="$classsff_1_1utils_1_1Singleton.html#aea27a658e56c5171eb53cc7c6a1797aa" title="Returns the single instance of the object. " alt="" coords="189,5,367,61"/>
+<area shape="rect" id="node3" href="$classsff_1_1utils_1_1Transformation.html#ae32760757e4f740c153bd5affa86837c" title="Transform a game y position into a pixel y position. " alt="" coords="188,86,368,127"/>
+</map>

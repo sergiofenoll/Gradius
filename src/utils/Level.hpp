@@ -1,5 +1,4 @@
-#ifndef LEVEL_HPP
-#define LEVEL_HPP
+#pragma once
 
 #include <fstream>
 #include <list>
@@ -88,5 +87,3 @@ namespace sff {
 		};
 	}
 }
-
-#endif

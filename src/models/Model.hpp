@@ -1,5 +1,4 @@
-#ifndef MODEL_HPP
-#define MODEL_HPP
+#pragma once
 
 #include <memory>
 
@@ -107,5 +106,3 @@ namespace sff {
 
 	}
 }
-
-#endif
