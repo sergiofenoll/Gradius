@@ -1,0 +1,7 @@
+<map id="sff::game::Entity" name="sff::game::Entity">
+<area shape="rect" id="node2" href="$classsff_1_1game_1_1BorderEntity.html" title="Entity that represents the deadly borders of the game window. " alt="" coords="198,5,370,32"/>
+<area shape="rect" id="node3" href="$classsff_1_1game_1_1BulletEntity.html" title="Entity that represents the deadly projectiles fired by the spaceships. " alt="" coords="201,56,367,83"/>
+<area shape="rect" id="node4" href="$classsff_1_1game_1_1EnemyShipEntity.html" title="Entity that represents the deadly enemy spaceships. " alt="" coords="183,107,385,133"/>
+<area shape="rect" id="node5" href="$classsff_1_1game_1_1ObstacleEntity.html" title="Entity that represents the deadly floating obstacles in space. " alt="" coords="191,157,377,184"/>
+<area shape="rect" id="node6" href="$classsff_1_1game_1_1PlayerShipEntity.html" title="Entity that represents the friendly player spaceship. " alt="" coords="185,208,383,235"/>
+</map>

@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classsff_1_1utils_1_1Singleton.html" title="sff::utils::Singleton\l\&lt; Stopwatch \&gt;" alt="" coords="5,5,148,47"/>
+<area shape="rect" id="node1" href="$classsff_1_1utils_1_1Singleton.html" title="sff::game::Singleton\l\&lt; Stopwatch \&gt;" alt="" coords="5,5,148,47"/>
 <area shape="rect" id="node2" href="$classsff_1_1utils_1_1Stopwatch.html" title="An implementation of a Stopwatch FPS is set to 60, because there were no requirements regarding varia..." alt="" coords="196,13,347,39"/>
 </map>

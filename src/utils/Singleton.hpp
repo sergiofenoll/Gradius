@@ -1,6 +1,9 @@
 #pragma once
 
 namespace sff {
+	/**
+	 * @brief Namespace for different utility classes
+	 */
 	namespace utils {
 		/**
 		 * @brief An implementation of the Singleton pattern using templates

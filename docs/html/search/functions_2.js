@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['change_5fpos',['change_pos',['../classsff_1_1data_1_1Model.html#a076d77ce7bf5bedf32165e9cd48578f5',1,'sff::data::Model']]],
-  ['collides',['collides',['../classsff_1_1data_1_1BorderEntity.html#a8d7cc1172f5785c439d5735e0e3fa609',1,'sff::data::BorderEntity::collides()'],['../classsff_1_1data_1_1Entity.html#a7132697bca16304644f0ad72514092c2',1,'sff::data::Entity::collides()']]],
-  ['collision_5fdetection',['collision_detection',['../classsff_1_1utils_1_1Game.html#a5026e78205b8596280835f3acb09ac24',1,'sff::utils::Game::collision_detection(std::list&lt; data::Entity::shared &gt; &amp;e1, std::list&lt; data::Entity::shared &gt; &amp;e2) const'],['../classsff_1_1utils_1_1Game.html#a4af31d94892db4aa6a314f751c361ed1',1,'sff::utils::Game::collision_detection(std::list&lt; data::Entity::shared &gt; &amp;e1, data::Entity::shared e2) const']]],
-  ['controller',['Controller',['../classsff_1_1logic_1_1Controller.html#af1006e8565b1d8e2010c47760be40503',1,'sff::logic::Controller']]],
+  ['change_5fpos',['change_pos',['../structsff_1_1game_1_1ModelData.html#a847ed8adbba3420eef8deca5c42f6983',1,'sff::game::ModelData']]],
+  ['collides',['collides',['../classsff_1_1game_1_1BorderEntity.html#a081b29db705d8904ee1ce421e3077d8e',1,'sff::game::BorderEntity::collides()'],['../classsff_1_1game_1_1Entity.html#aa4f4ac2058837e3e9d314ee562880860',1,'sff::game::Entity::collides()']]],
+  ['collision_5fdetection',['collision_detection',['../classsff_1_1game_1_1Game.html#ae3ffda80abde5c99104a603ec0e9d980',1,'sff::game::Game::collision_detection(std::list&lt; game::Entity::shared &gt; &amp;entities1, std::list&lt; game::Entity::shared &gt; &amp;entities2) const'],['../classsff_1_1game_1_1Game.html#a14e914892ba95fe32bb29601897550dd',1,'sff::game::Game::collision_detection(std::list&lt; game::Entity::shared &gt; &amp;entities, game::Entity::shared single_entity) const']]],
   ['coordposition',['CoordPosition',['../structsff_1_1utils_1_1CoordPosition.html#ae69a36bd77534af5395360793ce688b3',1,'sff::utils::CoordPosition']]]
 ];

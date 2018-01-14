@@ -1,3 +1,3 @@
-<map id="sff::utils::Stopwatch::get_fps" name="sff::utils::Stopwatch::get_fps">
-<area shape="rect" id="node2" href="$classsff_1_1data_1_1Entity.html#a3b5441f3994493a12d23aa76d35fe916" title="Constructs a new Entity Will throw an exception if the config file can&#39;t be opened If any of the requ..." alt="" coords="204,5,332,47"/>
+<map id="sff::game::Stopwatch::get_fps" name="sff::game::Stopwatch::get_fps">
+<area shape="rect" id="node2" href="$classsff_1_1game_1_1Entity.html#ab0adb7a4861bf217fbc88038b9ea4458" title="Constructs a new Entity Will throw an exception if the config file can&#39;t be opened If any of the requ..." alt="" coords="204,5,340,47"/>
 </map>

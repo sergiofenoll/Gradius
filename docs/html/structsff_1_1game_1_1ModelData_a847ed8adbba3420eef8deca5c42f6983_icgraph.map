@@ -1,0 +1,5 @@
+<map id="sff::game::ModelData::change_pos" name="sff::game::ModelData::change_pos">
+<area shape="rect" id="node2" href="$classsff_1_1game_1_1BulletEntity.html#ababd1856fe82fe9f4c0aae1e474e8bc0" title="Moves the bullet to the left or the right If the bullet is friendly (fired by the player) it moves to..." alt="" coords="231,5,397,47"/>
+<area shape="rect" id="node3" href="$classsff_1_1game_1_1Entity.html#a3b554a22986cd6e90f58c4fa57e443a5" title="Moves the model to the left It moves to the left unless overridden. " alt="" coords="227,71,401,98"/>
+<area shape="rect" id="node4" href="$classsff_1_1game_1_1PlayerShipEntity.html#a6758c9c77b86bec294627a5fc8769ebf" title="Overrides move() to use player actions and bound the player to the game window. " alt="" coords="215,123,413,164"/>
+</map>

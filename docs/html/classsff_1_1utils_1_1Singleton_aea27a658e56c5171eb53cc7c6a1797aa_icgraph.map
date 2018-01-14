@@ -1,0 +1,7 @@
+<map id="sff::utils::Singleton::get_instance" name="sff::utils::Singleton::get_instance">
+<area shape="rect" id="node2" href="$classsff_1_1game_1_1Game.html#aab9065246003997ed0cb87f5b92ea50b" title="The game loop Event handling, collision detection and everything inbetween happens inside here..." alt="" coords="196,5,355,32"/>
+<area shape="rect" id="node3" href="$classsff_1_1gfx_1_1View.html#a05e3c8a108f4adbf3cf71eeadc1605ae" title="Displays the given model on the given window. " alt="" coords="403,85,564,112"/>
+<area shape="rect" id="node4" href="$classsff_1_1gfx_1_1View.html#a75e09d59329b3936e5ce0d490c70cfa8" title="Returns the texture width in game coordinates (the model&#39;s width) " alt="" coords="208,107,343,149"/>
+<area shape="rect" id="node6" href="$classsff_1_1gfx_1_1View.html#a556d7890c7c1ac7d35c8c9dfe1744a24" title="Returns the texture height in game coordinates (the model&#39;s height) " alt="" coords="208,173,343,214"/>
+<area shape="rect" id="node5" href="$classsff_1_1gfx_1_1View.html#ab57269d7a6a97d81c8e1692a6bb9f4ea" title="Returns the radius of the largest inner circle of the texture (the model&#39;s radius) ..." alt="" coords="416,139,551,181"/>
+</map>

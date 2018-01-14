@@ -1,4 +1,4 @@
 <map id="sff::gfx::View::get_texture_width" name="sff::gfx::View::get_texture_width">
-<area shape="rect" id="node2" href="$classsff_1_1gfx_1_1View.html#ae09aecde8047c884bfb8f8588ed6f33a" title="Displays the given model on the given window. " alt="" coords="188,5,349,32"/>
+<area shape="rect" id="node2" href="$classsff_1_1gfx_1_1View.html#a05e3c8a108f4adbf3cf71eeadc1605ae" title="Displays the given model on the given window. " alt="" coords="188,5,349,32"/>
 <area shape="rect" id="node3" href="$classsff_1_1gfx_1_1View.html#ab57269d7a6a97d81c8e1692a6bb9f4ea" title="Returns the radius of the largest inner circle of the texture (the model&#39;s radius) ..." alt="" coords="201,57,336,98"/>
 </map>

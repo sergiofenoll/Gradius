@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['run',['run',['../classsff_1_1utils_1_1Game.html#a1825410b02d6ed328c583ba1d5d65bb0',1,'sff::utils::Game']]]
+  ['run',['run',['../classsff_1_1game_1_1Game.html#aab9065246003997ed0cb87f5b92ea50b',1,'sff::game::Game']]]
 ];

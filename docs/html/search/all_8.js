@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['is_5fdead',['is_dead',['../classsff_1_1data_1_1BorderEntity.html#adaf0bd623b221b00945a34f6bff1b55d',1,'sff::data::BorderEntity::is_dead()'],['../classsff_1_1data_1_1BulletEntity.html#afa10b91af45fb9b9205352ba8dce7455',1,'sff::data::BulletEntity::is_dead()'],['../classsff_1_1data_1_1Entity.html#a09927f95b0e6725a2966fc5dae483950',1,'sff::data::Entity::is_dead()'],['../classsff_1_1data_1_1PlayerShipEntity.html#a750863b82b99cded5a81ecfed0486e34',1,'sff::data::PlayerShipEntity::is_dead()']]]
+  ['is_5fdead',['is_dead',['../classsff_1_1game_1_1BorderEntity.html#afda001f6e34b2d60f6d6d4053e26526b',1,'sff::game::BorderEntity::is_dead()'],['../classsff_1_1game_1_1BulletEntity.html#afc1d09b2722eef606c859aeda5be379b',1,'sff::game::BulletEntity::is_dead()'],['../classsff_1_1game_1_1Entity.html#ac0028eca960d54ce16fdbf527651aeaf',1,'sff::game::Entity::is_dead()'],['../classsff_1_1game_1_1PlayerShipEntity.html#a7f760be21d3f90986b77ae459d50e094',1,'sff::game::PlayerShipEntity::is_dead()']]]
 ];

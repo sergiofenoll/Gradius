@@ -1,9 +1,9 @@
 #include "Controller.hpp"
 
 namespace sff {
-	namespace logic {
+	namespace events {
 		void Controller::handle_event(sf::RenderWindow &window, sf::Event event,
-									  data::PlayerShipEntity::shared player) const {
+									  game::PlayerShipEntity::shared player) const {
 			switch (event.type) {
 				case sf::Event::KeyPressed:
 					set_pressed(window, event, player, true);
@@ -19,7 +19,7 @@ namespace sff {
 			}
 		}
 
-		void Controller::set_pressed(sf::RenderWindow &window, sf::Event event, data::PlayerShipEntity::shared player,
+		void Controller::set_pressed(sf::RenderWindow &window, sf::Event event, game::PlayerShipEntity::shared player,
 									 bool pressed) const {
 			switch (event.key.code) {
 				case sf::Keyboard::W:

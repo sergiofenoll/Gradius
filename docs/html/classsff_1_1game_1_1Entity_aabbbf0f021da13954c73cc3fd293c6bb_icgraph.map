@@ -1,0 +1,5 @@
+<map id="sff::game::Entity::get_health" name="sff::game::Entity::get_health">
+<area shape="rect" id="node2" href="$classsff_1_1game_1_1BulletEntity.html#afc1d09b2722eef606c859aeda5be379b" title="Checks if the bullet is dead by looking at its health and position. " alt="" coords="205,5,372,47"/>
+<area shape="rect" id="node3" href="$classsff_1_1game_1_1Entity.html#ac0028eca960d54ce16fdbf527651aeaf" title="Checks if the entity is dead. " alt="" coords="221,71,357,112"/>
+<area shape="rect" id="node4" href="$classsff_1_1game_1_1PlayerShipEntity.html#a7f760be21d3f90986b77ae459d50e094" title="Overrides is_dead() so that it only checks health. " alt="" coords="189,136,388,177"/>
+</map>

@@ -95,13 +95,13 @@ namespace sff {
 			}
 		}
 
-		std::list<data::Entity::shared> Level::get_next_wave() {
-			if (m_wave_nr >= m_waves.size()) return std::list<data::Entity::shared> {};
-			std::list<data::Entity::shared> current_wave;
+		std::list<game::Entity::shared> Level::get_next_wave() {
+			if (m_wave_nr >= m_waves.size()) return std::list<game::Entity::shared> {};
+			std::list<game::Entity::shared> current_wave;
 			try {
 				for (EnemyConfig enemy_config : m_waves[m_wave_nr].enemies) {
 					for (unsigned int _ = 0; _ < enemy_config.amount; ++_)
-						current_wave.push_back(std::make_shared<data::EnemyShipEntity>(enemy_config.config_filename));
+						current_wave.push_back(std::make_shared<game::EnemyShipEntity>(enemy_config.config_filename));
 				}
 			} catch (std::exception &e) {
 				std::cout << e.what() << std::endl;
@@ -109,7 +109,7 @@ namespace sff {
 			try {
 				for (ObstacleConfig obstacle_config : m_waves[m_wave_nr].obstacles) {
 					for (unsigned int _ = 0; _ < obstacle_config.amount; ++_)
-						current_wave.push_back(std::make_shared<data::ObstacleEntity>(obstacle_config.config_filename));
+						current_wave.push_back(std::make_shared<game::ObstacleEntity>(obstacle_config.config_filename));
 				}
 			} catch (std::exception &e) {
 				std::cout << e.what() << std::endl;
@@ -118,11 +118,11 @@ namespace sff {
 			return current_wave;
 		}
 
-		std::list<data::Entity::shared> Level::get_borders() {
-			std::list<data::Entity::shared> borders;
+		std::list<game::Entity::shared> Level::get_borders() {
+			std::list<game::Entity::shared> borders;
 			try {
-				borders.push_back(std::make_shared<data::BorderEntity>(m_border_config_filename, false));
-				borders.push_back(std::make_shared<data::BorderEntity>(m_border_config_filename, true));
+				borders.push_back(std::make_shared<game::BorderEntity>(m_border_config_filename, false));
+				borders.push_back(std::make_shared<game::BorderEntity>(m_border_config_filename, true));
 			} catch (std::exception &e) {
 				std::cout << e.what() << std::endl;
 			}

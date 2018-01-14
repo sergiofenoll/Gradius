@@ -148,7 +148,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ab83e06d43952562e036ca1328190c1c3"><td class="memItemLeft" align="right" valign="top"><a id="ab83e06d43952562e036ca1328190c1c3"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>m_damage</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>damage</b></td></tr>
 <tr class="separator:ab83e06d43952562e036ca1328190c1c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bf99cdae7960622d6855de58ccf6d65"><td class="memItemLeft" align="right" valign="top"><a id="a5bf99cdae7960622d6855de58ccf6d65"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>m_health</b></td></tr>
@@ -157,16 +157,16 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>m_health</b></td></tr>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_x_pos</b></td></tr>
 <tr class="separator:af85d3b44a4c9f6744c97290a600230d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad708b399abbff6fe3f0fabe092cf161c"><td class="memItemLeft" align="right" valign="top"><a id="ad708b399abbff6fe3f0fabe092cf161c"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>m_y_pos</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>y_pos</b></td></tr>
 <tr class="separator:ad708b399abbff6fe3f0fabe092cf161c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72a1f9fdebc24d743d6df55288e1424f"><td class="memItemLeft" align="right" valign="top"><a id="a72a1f9fdebc24d743d6df55288e1424f"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_width</b></td></tr>
 <tr class="separator:a72a1f9fdebc24d743d6df55288e1424f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adeab982b76822f102401905375d6755a"><td class="memItemLeft" align="right" valign="top"><a id="adeab982b76822f102401905375d6755a"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>m_height</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>height</b></td></tr>
 <tr class="separator:adeab982b76822f102401905375d6755a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4732c681b1087259b5bae703d17a51a9"><td class="memItemLeft" align="right" valign="top"><a id="a4732c681b1087259b5bae703d17a51a9"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>m_radius</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>radius</b></td></tr>
 <tr class="separator:a4732c681b1087259b5bae703d17a51a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -245,7 +245,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>m_radius</b></td></t
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00005">5</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                : m_damage(damage), m_health(health), m_x_pos(x_pos), m_y_pos(y_pos), m_width(width), m_height(height),</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                  m_radius(radius) {}</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                : damage(damage), m_health(health), m_x_pos(x_pos), y_pos(y_pos), m_width(width), height(height),</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                  radius(radius) {}</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -285,7 +285,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>m_radius</b></td></t
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00049">49</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                            {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            m_x_pos += delta_x;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            m_y_pos += delta_y;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                            {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            m_x_pos += delta_x;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            y_pos += delta_y;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="af74ec9515e1e62934426df20ac0f9603"></a>
@@ -307,7 +307,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>m_radius</b></td></t
 <dl class="section return"><dt>Returns</dt><dd>The damage caused by the model </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00009">9</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                    {</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <span class="keywordflow">return</span> m_damage;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                    {</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <span class="keywordflow">return</span> damage;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="abc62e890447bdabbd57a51b3b20d5f71"></a>
@@ -351,7 +351,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>m_radius</b></td></t
 <dl class="section return"><dt>Returns</dt><dd>The model's height </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00029">29</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                      {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> m_height;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                      {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> height;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a1bf8b0b992f7cf04ccfec134358b6ea9"></a>
@@ -373,7 +373,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>m_radius</b></td></t
 <dl class="section return"><dt>Returns</dt><dd>The model's radius </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00033">33</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                      {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">return</span> m_radius;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                      {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">return</span> radius;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="aa0369d578c3c812d07a7e2d9d56219d3"></a>
@@ -447,7 +447,7 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>The model's y position </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00021">21</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                     {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">return</span> m_y_pos;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div></div><!-- fragment --><div class="dynheader">
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                     {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">return</span> y_pos;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div></div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsff_1_1data_1_1Model_a8d9091f8e21f1bbd73010861637ed5d6_icgraph.png" border="0" usemap="#classsff_1_1data_1_1Model_a8d9091f8e21f1bbd73010861637ed5d6_icgraph" alt=""/></div>
@@ -539,7 +539,7 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00045">45</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                                {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            m_y_pos = y_pos;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                                {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            y_pos = y_pos;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>

@@ -10,12 +10,12 @@ namespace sff {
 			m_sprite.setOrigin(texture_size.x / 2, texture_size.y / 2);
 		}
 
-		void View::display(sf::RenderWindow &window, data::Model &model, bool fade, bool debug) {
-			if (model.get_x_pos() > (4 + get_texture_width()) or model.get_x_pos() < (0 - get_texture_width()))
-				return; // No need to draw entities outside the game window
+		void View::display(sf::RenderWindow &window, game::ModelData &model, bool fade, bool debug) {
+			if (model.x_pos > (4 + get_texture_width()) or model.y_pos < (0 - get_texture_width()))
+				return; // No need to draw models outside the game window
 
 			auto pos = utils::Transformation::get_instance().transform(
-					utils::CoordPosition(model.get_x_pos(), model.get_y_pos()));
+					utils::CoordPosition(model.x_pos, model.y_pos));
 
 			m_sprite.setPosition(pos.x, pos.y);
 			m_sprite.setColor(sf::Color(255, 255, 255, (fade ? 128 : 255)));

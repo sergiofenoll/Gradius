@@ -5,9 +5,9 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include "json.hpp"
-#include "../entities/BorderEntity.hpp"
-#include "../entities/EnemyShipEntity.hpp"
-#include "../entities/ObstacleEntity.hpp"
+#include "../models/BorderEntity.hpp"
+#include "../models/EnemyShipEntity.hpp"
+#include "../models/ObstacleEntity.hpp"
 #include "../exceptions/BaseException.hpp"
 
 namespace sff {
@@ -57,13 +57,13 @@ namespace sff {
 			 * Can return an empty list, this happens if there is no next wave
 			 * @return List of entities
 			 */
-			std::list<data::Entity::shared> get_next_wave();
+			std::list<game::Entity::shared> get_next_wave();
 
 			/**
 			 * @brief Returns a list of the level borders
 			 * @return A list of entities
 			 */
-			std::list<data::Entity::shared> get_borders();
+			std::list<game::Entity::shared> get_borders();
 
 			/**
 			 * @brief Draws the background

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['obstacleentity',['ObstacleEntity',['../classsff_1_1data_1_1ObstacleEntity.html#a575841191afc6905b812bdbe439cce0f',1,'sff::data::ObstacleEntity']]]
+  ['obstacleentity',['ObstacleEntity',['../classsff_1_1game_1_1ObstacleEntity.html#a86476c3fa8c4078cd657d3c36c317001',1,'sff::game::ObstacleEntity']]]
 ];

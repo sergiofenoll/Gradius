@@ -5,7 +5,7 @@
 #include <iterator>
 #include <list>
 #include <memory>
-#include "../entities/PlayerShipEntity.hpp"
+#include "../models/PlayerShipEntity.hpp"
 
 /**
  * @brief Namespace for Sergio Fenoll (Freire)
@@ -13,9 +13,9 @@
  */
 namespace sff {
 	/**
-	 * @brief Namespace for game logic
+	 * @brief Namespace for event handling
 	 */
-	namespace logic {
+	namespace events {
 
 		/**
 		 * @brief Handles events for the player
@@ -27,17 +27,12 @@ namespace sff {
 			using weak = std::weak_ptr<Controller>;
 
 			/**
-			 * @brief Default constructor
-			 */
-			Controller() = default;
-
-			/**
 			 * @brief Handle events for the player
 			 * @param window The game window. Can be closed if Escape is pressed
 			 * @param event The Event to be handled
 			 * @param player The player entity that will be affected by the event
 			 */
-			void handle_event(sf::RenderWindow &window, sf::Event event, data::PlayerShipEntity::shared player) const;
+			void handle_event(sf::RenderWindow &window, sf::Event event, game::PlayerShipEntity::shared player) const;
 
 		private:
 			/**
@@ -46,7 +41,7 @@ namespace sff {
 			 * @param player The player whose actions will be affected
 			 * @param pressed True to turn on the actions, false to turn off
 			 */
-			void set_pressed(sf::RenderWindow &window, sf::Event event, data::PlayerShipEntity::shared player,
+			void set_pressed(sf::RenderWindow &window, sf::Event event, game::PlayerShipEntity::shared player,
 							 bool pressed) const;
 		};
 

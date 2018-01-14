@@ -1,0 +1,4 @@
+<map id="sff::game::Entity::Entity" name="sff::game::Entity::Entity">
+<area shape="rect" id="node2" href="$classsff_1_1utils_1_1Singleton.html#aea27a658e56c5171eb53cc7c6a1797aa" title="Returns the single instance of the object. " alt="" coords="189,5,400,47"/>
+<area shape="rect" id="node3" href="$classsff_1_1utils_1_1Stopwatch.html#a83b5b40dbf0e4617d3eb37140a735136" title="Returns the FPS. " alt="" coords="219,71,370,112"/>
+</map>

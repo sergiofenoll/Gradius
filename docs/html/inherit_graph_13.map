@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node1" href="$classsff_1_1utils_1_1Singleton.html" title="An implementation of the Singleton pattern using templates Shamelessly taken from: https://stackoverf..." alt="" coords="5,5,187,32"/>
+<area shape="rect" id="node2" href="$classsff_1_1utils_1_1Transformation.html" title="An implementation of Transformation Transforms pixel coordinates into game coordinates and vice versa..." alt="" coords="235,5,415,32"/>
 </map>

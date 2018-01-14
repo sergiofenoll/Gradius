@@ -12,18 +12,18 @@ SET(SRC
 
 		src/controllers/Controller.hpp
 
-        src/entities/Entity.hpp
-        src/entities/PlayerShipEntity.cpp
-        src/entities/PlayerShipEntity.hpp
-		src/entities/EnemyShipEntity.cpp
-		src/entities/EnemyShipEntity.hpp
-		src/entities/BulletEntity.hpp
-		src/entities/ObstacleEntity.hpp
+		src/models/Entity.hpp
+		src/models/PlayerShipEntity.cpp
+		src/models/PlayerShipEntity.hpp
+		src/models/EnemyShipEntity.cpp
+		src/models/EnemyShipEntity.hpp
+		src/models/BulletEntity.hpp
+		src/models/ObstacleEntity.hpp
 
-		src/models/Model.hpp
+		src/models/ModelData.hpp
 
-		src/utils/Game.cpp
-        src/utils/Game.hpp
+		src/models/Game.cpp
+		src/models/Game.hpp
 		src/utils/json.hpp
         src/utils/Singleton.hpp
 		src/utils/Stopwatch.hpp
@@ -31,7 +31,7 @@ SET(SRC
 
         src/views/View.hpp
         src/views/View.cpp
-        src/utils/Level.hpp src/utils/Level.cpp src/entities/EnemyShipEntity.cpp src/entities/BorderEntity.cpp src/entities/BorderEntity.hpp src/controllers/Controller.cpp src/entities/BulletEntity.cpp src/entities/Entity.cpp src/models/Model.cpp src/entities/ObstacleEntity.cpp src/exceptions/BaseException.hpp)
+        src/utils/Level.hpp src/utils/Level.cpp src/models/EnemyShipEntity.cpp src/models/BorderEntity.cpp src/models/BorderEntity.hpp src/controllers/Controller.cpp src/models/BulletEntity.cpp src/models/Entity.cpp src/models/ModelData.cpp src/models/ObstacleEntity.cpp src/exceptions/BaseException.hpp)
 
 INCLUDE_DIRECTORIES(${SFML_INCLUDE_DIR})
 

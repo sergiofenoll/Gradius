@@ -1,19 +1,14 @@
 var searchData=
 [
-  ['get_5fborders',['get_borders',['../classsff_1_1utils_1_1Level.html#a6f1c768e6b958b80fe1e645f44851f9f',1,'sff::utils::Level']]],
-  ['get_5fdamage',['get_damage',['../classsff_1_1data_1_1Entity.html#a47b0c873e6168a75cd4f263918a6a6fe',1,'sff::data::Entity::get_damage()'],['../classsff_1_1data_1_1Model.html#af74ec9515e1e62934426df20ac0f9603',1,'sff::data::Model::get_damage()']]],
+  ['get_5fborders',['get_borders',['../classsff_1_1utils_1_1Level.html#af7e0b863e55588d989869ec41bf44116',1,'sff::utils::Level']]],
+  ['get_5fdamage',['get_damage',['../classsff_1_1game_1_1Entity.html#a24ab459bb9e05c01469e05bfd39def88',1,'sff::game::Entity']]],
   ['get_5ffps',['get_fps',['../classsff_1_1utils_1_1Stopwatch.html#a83b5b40dbf0e4617d3eb37140a735136',1,'sff::utils::Stopwatch']]],
-  ['get_5fhealth',['get_health',['../classsff_1_1data_1_1Entity.html#a044a031b9b858ad7b31ba5d2da4bbb86',1,'sff::data::Entity::get_health()'],['../classsff_1_1data_1_1Model.html#abc62e890447bdabbd57a51b3b20d5f71',1,'sff::data::Model::get_health()']]],
-  ['get_5fheight',['get_height',['../classsff_1_1data_1_1Model.html#a2ae43e8d2fe4a468724ca76b47ba8fce',1,'sff::data::Model']]],
+  ['get_5fhealth',['get_health',['../classsff_1_1game_1_1Entity.html#aabbbf0f021da13954c73cc3fd293c6bb',1,'sff::game::Entity']]],
   ['get_5finstance',['get_instance',['../classsff_1_1utils_1_1Singleton.html#aea27a658e56c5171eb53cc7c6a1797aa',1,'sff::utils::Singleton']]],
-  ['get_5fmodel',['get_model',['../classsff_1_1data_1_1Entity.html#a53cd25ceb4d831dda94f88e5682a5ce0',1,'sff::data::Entity']]],
-  ['get_5fnext_5fwave',['get_next_wave',['../classsff_1_1utils_1_1Level.html#a2494d05b72331699c09886f19f1c4414',1,'sff::utils::Level']]],
-  ['get_5fradius',['get_radius',['../classsff_1_1data_1_1Model.html#a1bf8b0b992f7cf04ccfec134358b6ea9',1,'sff::data::Model']]],
+  ['get_5fmodel_5fdata',['get_model_data',['../classsff_1_1game_1_1Entity.html#a7ea3ff20c9b667191d0b811775cc2787',1,'sff::game::Entity']]],
+  ['get_5fnext_5fwave',['get_next_wave',['../classsff_1_1utils_1_1Level.html#ab92f7e321b5b21eab69467f32ee60e2a',1,'sff::utils::Level']]],
   ['get_5ftexture_5fheight',['get_texture_height',['../classsff_1_1gfx_1_1View.html#a556d7890c7c1ac7d35c8c9dfe1744a24',1,'sff::gfx::View']]],
   ['get_5ftexture_5fradius',['get_texture_radius',['../classsff_1_1gfx_1_1View.html#ab57269d7a6a97d81c8e1692a6bb9f4ea',1,'sff::gfx::View']]],
   ['get_5ftexture_5fwidth',['get_texture_width',['../classsff_1_1gfx_1_1View.html#a75e09d59329b3936e5ce0d490c70cfa8',1,'sff::gfx::View']]],
-  ['get_5fwave_5fnr',['get_wave_nr',['../classsff_1_1utils_1_1Level.html#a4bb9daaf4056c75a5cbcb1b9639c02ad',1,'sff::utils::Level']]],
-  ['get_5fwidth',['get_width',['../classsff_1_1data_1_1Model.html#aa0369d578c3c812d07a7e2d9d56219d3',1,'sff::data::Model']]],
-  ['get_5fx_5fpos',['get_x_pos',['../classsff_1_1data_1_1Model.html#a21e44ca6923c9391d93eb5a53c7f4b2d',1,'sff::data::Model']]],
-  ['get_5fy_5fpos',['get_y_pos',['../classsff_1_1data_1_1Model.html#a8d9091f8e21f1bbd73010861637ed5d6',1,'sff::data::Model']]]
+  ['get_5fwave_5fnr',['get_wave_nr',['../classsff_1_1utils_1_1Level.html#a4bb9daaf4056c75a5cbcb1b9639c02ad',1,'sff::utils::Level']]]
 ];

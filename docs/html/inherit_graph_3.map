@@ -1,6 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classsff_1_1error_1_1BaseException.html" title="Base exception, all other custom exceptions from it This makes the usage easier, as there&#39;s only one ..." alt="" coords="140,56,321,83"/>
-<area shape="rect" id="node3" href="$classsff_1_1error_1_1FileOpenException.html" title="Exception which is caused when a file can&#39;t be opened Both SFML files (textures, fonts, ...) and fstream files should throw this exception if they&#39;re unable to open their files. " alt="" coords="378,5,583,32"/>
-<area shape="rect" id="node4" href="$classsff_1_1error_1_1ParserFieldException.html" title="Exception which is caused when the parser can&#39;t find a field When seeing this exception the user shou..." alt="" coords="371,56,590,83"/>
-<area shape="rect" id="node5" href="$classsff_1_1error_1_1ParserOpenException.html" title="Exception which is caused when the parser is unable to open the file When seeing this exception the u..." alt="" coords="369,107,592,133"/>
+<area shape="rect" id="node1" href="$classsff_1_1game_1_1Entity.html" title="The base Entity class Integral part of the Model. " alt="" coords="5,107,135,133"/>
+<area shape="rect" id="node2" href="$classsff_1_1game_1_1BorderEntity.html" title="Entity that represents the deadly borders of the game window. " alt="" coords="198,5,370,32"/>
+<area shape="rect" id="node3" href="$classsff_1_1game_1_1BulletEntity.html" title="Entity that represents the deadly projectiles fired by the spaceships. " alt="" coords="201,56,367,83"/>
+<area shape="rect" id="node4" href="$classsff_1_1game_1_1EnemyShipEntity.html" title="Entity that represents the deadly enemy spaceships. " alt="" coords="183,107,385,133"/>
+<area shape="rect" id="node5" href="$classsff_1_1game_1_1ObstacleEntity.html" title="Entity that represents the deadly floating obstacles in space. " alt="" coords="191,157,377,184"/>
+<area shape="rect" id="node6" href="$classsff_1_1game_1_1PlayerShipEntity.html" title="Entity that represents the friendly player spaceship. " alt="" coords="185,208,383,235"/>
 </map>

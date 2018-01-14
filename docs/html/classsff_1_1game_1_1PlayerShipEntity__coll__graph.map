@@ -1,0 +1,5 @@
+<map id="sff::game::PlayerShipEntity" name="sff::game::PlayerShipEntity">
+<area shape="rect" id="node2" href="$classsff_1_1game_1_1Entity.html" title="The base Entity class Integral part of the Model. " alt="" coords="21,95,151,121"/>
+<area shape="rect" id="node3" href="$structsff_1_1game_1_1ModelData.html" title="POD struct for holding Model data It holds all the game info, no logic is executed inside this struct..." alt="" coords="5,5,167,32"/>
+<area shape="rect" id="node4" href="$structsff_1_1game_1_1Actions.html" title="POD struct Holds bools denoting possible player actions. " alt="" coords="175,95,314,121"/>
+</map>

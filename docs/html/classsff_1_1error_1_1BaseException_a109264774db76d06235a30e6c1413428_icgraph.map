@@ -1,4 +1,4 @@
 <map id="sff::error::BaseException::what" name="sff::error::BaseException::what">
-<area shape="rect" id="node2" href="$classsff_1_1data_1_1EnemyShipEntity.html#a8bd6dbcc24fd96c2616ee1f21dc16e5f" title="Constructs a new EnemyShipEntity. " alt="" coords="235,5,429,47"/>
-<area shape="rect" id="node3" href="$classsff_1_1utils_1_1Level.html#a671b4cc82f3cb2b0e6270fc2962411a7" title="Constructs a new Level. " alt="" coords="269,71,395,112"/>
+<area shape="rect" id="node2" href="$classsff_1_1game_1_1EnemyShipEntity.html#aec7dc86b56c16de393a3ae8cd307901a" title="Constructs a new EnemyShipEntity. " alt="" coords="235,5,437,47"/>
+<area shape="rect" id="node3" href="$classsff_1_1utils_1_1Level.html#a671b4cc82f3cb2b0e6270fc2962411a7" title="Constructs a new Level. " alt="" coords="273,71,399,112"/>
 </map>

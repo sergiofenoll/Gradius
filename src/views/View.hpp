@@ -6,7 +6,7 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include "../exceptions/BaseException.hpp"
-#include "../models/Model.hpp"
+#include "../models/ModelData.hpp"
 #include "../utils/Transformation.hpp"
 
 namespace sff {
@@ -41,7 +41,7 @@ namespace sff {
 			 * NOTE: the circle drawn around the borders is not indicative of their hitbox
 			 * This wasn't change because it wasn't necessary for debugging
 			 */
-			void display(sf::RenderWindow &window, data::Model &model, bool fade, bool debug);
+			void display(sf::RenderWindow &window, game::ModelData &model, bool fade, bool debug);
 
 			/**
 			 * @brief Returns the texture width in game coordinates (the model's width)

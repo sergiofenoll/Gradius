@@ -86,27 +86,7 @@ $(document).ready(function(){initNavTree('hierarchy.html','');});
 <div class="textblock">
 <p><a href="hierarchy.html">Go to the textual class hierarchy</a></p>
 </div><table border="0" cellspacing="10" cellpadding="0">
-<tr><td><img src="inherit_graph_0.png" border="0" alt="" usemap="#sff_1_1data_1_1Actions"/>
-<map name="sff_1_1data_1_1Actions" id="sff_1_1data_1_1Actions">
-<area shape="rect" id="node1" href="structsff_1_1data_1_1Actions.html" title="POD struct Holds bools denoting possible player actions. " alt="" coords="5,5,136,32"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_1.png" border="0" alt="" usemap="#sff_1_1data_1_1Entity"/>
-<map name="sff_1_1data_1_1Entity" id="sff_1_1data_1_1Entity">
-<area shape="rect" id="node1" href="classsff_1_1data_1_1Entity.html" title="The base Entity class Encapsulates the Model and the View. " alt="" coords="5,107,127,133"/>
-<area shape="rect" id="node2" href="classsff_1_1data_1_1BorderEntity.html" title="Entity that represents the deadly borders of the game window. " alt="" coords="190,5,354,32"/>
-<area shape="rect" id="node3" href="classsff_1_1data_1_1BulletEntity.html" title="Entity that represents the deadly projectiles fired by the spaceships. " alt="" coords="193,56,351,83"/>
-<area shape="rect" id="node4" href="classsff_1_1data_1_1EnemyShipEntity.html" title="Entity that represents the deadly enemy spaceships. " alt="" coords="175,107,369,133"/>
-<area shape="rect" id="node5" href="classsff_1_1data_1_1ObstacleEntity.html" title="Entity that represents the deadly floating obstacles in space. " alt="" coords="183,157,361,184"/>
-<area shape="rect" id="node6" href="classsff_1_1data_1_1PlayerShipEntity.html" title="Entity that represents the friendly player spaceship. " alt="" coords="177,208,367,235"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_2.png" border="0" alt="" usemap="#sff_1_1data_1_1Model"/>
-<map name="sff_1_1data_1_1Model" id="sff_1_1data_1_1Model">
-<area shape="rect" id="node1" href="classsff_1_1data_1_1Model.html" title="Model It holds all the game info, no logic is executed inside this class (except for simple arithmeti..." alt="" coords="5,5,128,32"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_3.png" border="0" alt="" usemap="#sff_1_1error_1_1BaseException"/>
+<tr><td><img src="inherit_graph_0.png" border="0" alt="" usemap="#sff_1_1error_1_1BaseException"/>
 <map name="sff_1_1error_1_1BaseException" id="sff_1_1error_1_1BaseException">
 <area shape="rect" id="node2" href="classsff_1_1error_1_1BaseException.html" title="Base exception, all other custom exceptions from it This makes the usage easier, as there&#39;s only one ..." alt="" coords="140,56,321,83"/>
 <area shape="rect" id="node3" href="classsff_1_1error_1_1FileOpenException.html" title="Exception which is caused when a file can&#39;t be opened Both SFML files (textures, fonts, ...) and fstream files should throw this exception if they&#39;re unable to open their files. " alt="" coords="378,5,583,32"/>
@@ -114,14 +94,34 @@ $(document).ready(function(){initNavTree('hierarchy.html','');});
 <area shape="rect" id="node5" href="classsff_1_1error_1_1ParserOpenException.html" title="Exception which is caused when the parser is unable to open the file When seeing this exception the u..." alt="" coords="369,107,592,133"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_4.png" border="0" alt="" usemap="#sff_1_1gfx_1_1View"/>
-<map name="sff_1_1gfx_1_1View" id="sff_1_1gfx_1_1View">
-<area shape="rect" id="node1" href="classsff_1_1gfx_1_1View.html" title="View Holds no game data/logic, only SFML data (texture, sprite) and logic (size) " alt="" coords="5,5,112,32"/>
+<tr><td><img src="inherit_graph_1.png" border="0" alt="" usemap="#sff_1_1events_1_1Controller"/>
+<map name="sff_1_1events_1_1Controller" id="sff_1_1events_1_1Controller">
+<area shape="rect" id="node1" href="classsff_1_1events_1_1Controller.html" title="Handles events for the player. " alt="" coords="5,5,168,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_5.png" border="0" alt="" usemap="#sff_1_1logic_1_1Controller"/>
-<map name="sff_1_1logic_1_1Controller" id="sff_1_1logic_1_1Controller">
-<area shape="rect" id="node1" href="classsff_1_1logic_1_1Controller.html" title="Handles events for the player. " alt="" coords="5,5,155,32"/>
+<tr><td><img src="inherit_graph_2.png" border="0" alt="" usemap="#sff_1_1game_1_1Actions"/>
+<map name="sff_1_1game_1_1Actions" id="sff_1_1game_1_1Actions">
+<area shape="rect" id="node1" href="structsff_1_1game_1_1Actions.html" title="POD struct Holds bools denoting possible player actions. " alt="" coords="5,5,144,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_3.png" border="0" alt="" usemap="#sff_1_1game_1_1Entity"/>
+<map name="sff_1_1game_1_1Entity" id="sff_1_1game_1_1Entity">
+<area shape="rect" id="node1" href="classsff_1_1game_1_1Entity.html" title="The base Entity class Integral part of the Model. " alt="" coords="5,107,135,133"/>
+<area shape="rect" id="node2" href="classsff_1_1game_1_1BorderEntity.html" title="Entity that represents the deadly borders of the game window. " alt="" coords="198,5,370,32"/>
+<area shape="rect" id="node3" href="classsff_1_1game_1_1BulletEntity.html" title="Entity that represents the deadly projectiles fired by the spaceships. " alt="" coords="201,56,367,83"/>
+<area shape="rect" id="node4" href="classsff_1_1game_1_1EnemyShipEntity.html" title="Entity that represents the deadly enemy spaceships. " alt="" coords="183,107,385,133"/>
+<area shape="rect" id="node5" href="classsff_1_1game_1_1ObstacleEntity.html" title="Entity that represents the deadly floating obstacles in space. " alt="" coords="191,157,377,184"/>
+<area shape="rect" id="node6" href="classsff_1_1game_1_1PlayerShipEntity.html" title="Entity that represents the friendly player spaceship. " alt="" coords="185,208,383,235"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_4.png" border="0" alt="" usemap="#sff_1_1game_1_1ModelData"/>
+<map name="sff_1_1game_1_1ModelData" id="sff_1_1game_1_1ModelData">
+<area shape="rect" id="node1" href="structsff_1_1game_1_1ModelData.html" title="POD struct for holding Model data It holds all the game info, no logic is executed inside this struct..." alt="" coords="5,5,167,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_5.png" border="0" alt="" usemap="#sff_1_1gfx_1_1View"/>
+<map name="sff_1_1gfx_1_1View" id="sff_1_1gfx_1_1View">
+<area shape="rect" id="node1" href="classsff_1_1gfx_1_1View.html" title="View Holds no game data/logic, only SFML data (texture, sprite) and logic (size) " alt="" coords="5,5,112,32"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_6.png" border="0" alt="" usemap="#sff_1_1utils_1_1CoordPosition"/>
@@ -152,24 +152,24 @@ $(document).ready(function(){initNavTree('hierarchy.html','');});
 <tr><td><img src="inherit_graph_11.png" border="0" alt="" usemap="#sff_1_1utils_1_1Singleton_3_01Game_01_4"/>
 <map name="sff_1_1utils_1_1Singleton_3_01Game_01_4" id="sff_1_1utils_1_1Singleton_3_01Game_01_4">
 <area shape="rect" id="node1" href="classsff_1_1utils_1_1Singleton.html" title="sff::utils::Singleton\l\&lt; Game \&gt;" alt="" coords="5,5,148,47"/>
-<area shape="rect" id="node2" href="classsff_1_1utils_1_1Game.html" title="Game class Encapsulates the main game loop, collision detection and UI related functions Is a Singlet..." alt="" coords="196,13,317,39"/>
+<area shape="rect" id="node2" href="classsff_1_1game_1_1Game.html" title="Game class Encapsulates the main game loop, collision detection and UI related functions Is a Singlet..." alt="" coords="196,13,327,39"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_12.png" border="0" alt="" usemap="#sff_1_1utils_1_1Singleton_3_01Stopwatch_01_4"/>
 <map name="sff_1_1utils_1_1Singleton_3_01Stopwatch_01_4" id="sff_1_1utils_1_1Singleton_3_01Stopwatch_01_4">
-<area shape="rect" id="node1" href="classsff_1_1utils_1_1Singleton.html" title="sff::utils::Singleton\l\&lt; Stopwatch \&gt;" alt="" coords="5,5,148,47"/>
+<area shape="rect" id="node1" href="classsff_1_1utils_1_1Singleton.html" title="sff::game::Singleton\l\&lt; Stopwatch \&gt;" alt="" coords="5,5,148,47"/>
 <area shape="rect" id="node2" href="classsff_1_1utils_1_1Stopwatch.html" title="An implementation of a Stopwatch FPS is set to 60, because there were no requirements regarding varia..." alt="" coords="196,13,347,39"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_13.png" border="0" alt="" usemap="#sff_1_1utils_1_1Singleton_3_01T_01_4"/>
 <map name="sff_1_1utils_1_1Singleton_3_01T_01_4" id="sff_1_1utils_1_1Singleton_3_01T_01_4">
 <area shape="rect" id="node1" href="classsff_1_1utils_1_1Singleton.html" title="An implementation of the Singleton pattern using templates Shamelessly taken from: https://stackoverf..." alt="" coords="5,5,187,32"/>
+<area shape="rect" id="node2" href="classsff_1_1utils_1_1Transformation.html" title="An implementation of Transformation Transforms pixel coordinates into game coordinates and vice versa..." alt="" coords="235,5,415,32"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_14.png" border="0" alt="" usemap="#sff_1_1utils_1_1Singleton_3_01Transformation_01_4"/>
 <map name="sff_1_1utils_1_1Singleton_3_01Transformation_01_4" id="sff_1_1utils_1_1Singleton_3_01Transformation_01_4">
 <area shape="rect" id="node1" href="classsff_1_1utils_1_1Singleton.html" title="sff::utils::Singleton\l\&lt; Transformation \&gt;" alt="" coords="5,5,156,47"/>
-<area shape="rect" id="node2" href="classsff_1_1utils_1_1Transformation.html" title="An implementation of Transformation Transforms pixel coordinates into game coordinates and vice versa..." alt="" coords="204,13,384,39"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_15.png" border="0" alt="" usemap="#sff_1_1utils_1_1Wave"/>

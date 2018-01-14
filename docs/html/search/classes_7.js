@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['model',['Model',['../classsff_1_1data_1_1Model.html',1,'sff::data']]]
+  ['modeldata',['ModelData',['../structsff_1_1game_1_1ModelData.html',1,'sff::game']]]
 ];

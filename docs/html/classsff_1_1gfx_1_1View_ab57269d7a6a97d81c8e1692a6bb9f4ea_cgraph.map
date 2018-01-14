@@ -1,7 +1,5 @@
 <map id="sff::gfx::View::get_texture_radius" name="sff::gfx::View::get_texture_radius">
-<area shape="rect" id="node2" href="$classsff_1_1gfx_1_1View.html#a75e09d59329b3936e5ce0d490c70cfa8" title="Returns the texture width in game coordinates (the model&#39;s width) " alt="" coords="188,47,323,88"/>
-<area shape="rect" id="node5" href="$classsff_1_1gfx_1_1View.html#a556d7890c7c1ac7d35c8c9dfe1744a24" title="Returns the texture height in game coordinates (the model&#39;s height) " alt="" coords="188,112,323,153"/>
-<area shape="rect" id="node3" href="$classsff_1_1utils_1_1Singleton.html#aea27a658e56c5171eb53cc7c6a1797aa" title="Returns the single instance of the object. " alt="" coords="371,71,550,127"/>
-<area shape="rect" id="node4" href="$classsff_1_1utils_1_1Transformation.html#a3f949ead8dfe53fcab3025690da400c4" title="Transform a game x position into a pixel x position. " alt="" coords="371,5,551,47"/>
-<area shape="rect" id="node6" href="$classsff_1_1utils_1_1Transformation.html#ae32760757e4f740c153bd5affa86837c" title="Transform a game y position into a pixel y position. " alt="" coords="371,152,551,193"/>
+<area shape="rect" id="node2" href="$classsff_1_1gfx_1_1View.html#a75e09d59329b3936e5ce0d490c70cfa8" title="Returns the texture width in game coordinates (the model&#39;s width) " alt="" coords="188,5,323,47"/>
+<area shape="rect" id="node4" href="$classsff_1_1gfx_1_1View.html#a556d7890c7c1ac7d35c8c9dfe1744a24" title="Returns the texture height in game coordinates (the model&#39;s height) " alt="" coords="188,71,323,112"/>
+<area shape="rect" id="node3" href="$classsff_1_1utils_1_1Singleton.html#aea27a658e56c5171eb53cc7c6a1797aa" title="Returns the single instance of the object. " alt="" coords="371,39,513,80"/>
 </map>
